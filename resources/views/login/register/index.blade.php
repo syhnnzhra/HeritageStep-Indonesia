@@ -13,19 +13,11 @@
         <form class="login-form col-lg-3" action="/register" method="POST">
             @csrf
             <h2>Register</h2>
+            <input type="hidden" name="provider" value="local">
             <div class="mb-3">
                 <label for="name" class="form-label">Name:</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" required>
                 @error('name')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-            <div class="mb-3">
-                <label for="username" class="form-label">Username:</label>
-                <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" required>
-                @error('username')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -52,7 +44,7 @@
             </div>
             <p class="text-center mt-2">Or register with:</p>
             <div class="social-login d-flex justify-content-center">
-                <a href="your_google_oauth_url" class="btn btn-light">
+                <a href="{{ url('/redirect-to-google') }}" class="btn btn-light">
                     <img src="img/google.png" height="21px" alt=""> Google
                 </a>
             </div>

@@ -19,6 +19,9 @@ use App\Http\Controllers\GoogleAuthController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
 
 //guest untuk yg tidak login
 Route::group(['middleware' => 'guest'], function () {

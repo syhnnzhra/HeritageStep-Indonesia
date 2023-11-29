@@ -19,8 +19,17 @@ return new class extends Migration
             $table->string('password')->nullable();
             $table->string('provider');
             $table->string('provider_id')->unique()->nullable();
+            $table->string('jeniskelamin')->nullable();
+            $table->date('tanggal_lahir')->nullable();
+            $table->string('alamat')->nullable();
+            $table->unsignedBigInteger('city_id')->nullable();
+            $table->unsignedBigInteger('province_id')->nullable();
+            $table->string('kode_pos')->nullable();
             $table->rememberToken();
             $table->timestamps();
+
+            // $table->foreign('city_id')->references('id')->on('cities');
+            // $table->foreign('province_id')->references('id')->on('provinces');
         });
     }
 

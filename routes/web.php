@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GoogleAuthController;
 
 /*
@@ -19,9 +22,6 @@ use App\Http\Controllers\GoogleAuthController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
 
 //guest untuk yg tidak login
 Route::group(['middleware' => 'guest'], function () {
@@ -36,6 +36,14 @@ Route::group(['middleware' => 'guest'], function () {
 
     // register
     Route::get('/register', [RegisterController::class, 'index']);
-    Route::post('/register', [RegisterController::class, 'store']);
+    Route::post('/register', [RegisterController::class, 'store']); 
+    
+});
 
+//auth login user
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('/dashboard', DashboardController::class);
+    Route::resource('/order', OrderController::class);
+    Route::resource('/customer', CustomerController::class);
+    
 });

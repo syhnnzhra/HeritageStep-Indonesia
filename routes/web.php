@@ -23,6 +23,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('home', function () {
+    return view('home');
+});
+
 //guest untuk yg tidak login
 Route::group(['middleware' => 'guest'], function () {
     // login

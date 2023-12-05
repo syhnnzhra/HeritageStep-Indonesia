@@ -1,6 +1,3 @@
-
-<body>
-
     <div class="sidebar uk-padding-remove-left">
         <div class="logo-content">
             <div class="logo uk-padding">
@@ -48,7 +45,11 @@
                         <div class="job">Admin</div>
                     </div>
                 </div>
-                <i class="bx bx-log-out" id="logout"></i>
+                <form action="/logout" method="post">
+                    @csrf
+                    <button type="submit"> <i class="bx bx-log-out" id="logout"></i></button>
+                </form>
+                
             </div>
         </div>
     </div>

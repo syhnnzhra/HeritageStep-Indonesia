@@ -19,12 +19,12 @@ use App\Http\Controllers\GoogleAuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/cek', function () {
+    return view('admin.dashboard');
 });
 
-Route::get('home', function () {
-    return view('home');
+Route::get('/', function () {
+    return view('user.home');
 });
 
 //guest untuk yg tidak login
@@ -32,7 +32,6 @@ Route::group(['middleware' => 'guest'], function () {
     // login
     Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/login', [LoginController::class, 'authenticate']);
-    Route::post('/logout', [LoginController::class, 'logout']);
 
     // login google
     Route::get('/auth/google', [GoogleAuthController::class, 'redirect'])->name('google-auth');
@@ -49,5 +48,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/dashboard', DashboardController::class);
     Route::resource('/order', OrderController::class);
     Route::resource('/customer', CustomerController::class);
+
+    Route::post('/logout', [LoginController::class, 'logout']);
     
 });

@@ -20,7 +20,7 @@ use App\Http\Controllers\GoogleAuthController;
 */
 
 Route::get('/cek', function () {
-    return view('admin.dashboard');
+    return view('admin.pesanan.index');
 });
 
 Route::get('/', function () {

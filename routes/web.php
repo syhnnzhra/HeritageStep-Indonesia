@@ -19,8 +19,14 @@ use App\Http\Controllers\GoogleAuthController;
 |
 */
 
-Route::get('/cek', function () {
+Route::get('/dash', function () {
+    return view('admin.dashboard.index');
+});
+Route::get('/pesan', function () {
     return view('admin.pesanan.index');
+});
+Route::get('/cust', function () {
+    return view('admin.customer.index');
 });
 
 Route::get('/', function () {

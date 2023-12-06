@@ -26,7 +26,7 @@ Route::get('/pesan', function () {
     return view('admin.pesanan.index');
 });
 Route::get('/cust', function () {
-    return view('admin.customer.index');
+    return view('admin.customers.index');
 });
 
 Route::get('/', function () {

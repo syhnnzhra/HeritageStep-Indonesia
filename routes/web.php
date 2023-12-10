@@ -22,6 +22,9 @@ use App\Http\Controllers\GoogleAuthController;
 Route::get('/cek', function () {
     return view('admin.pesanan.index');
 });
+Route::get('/ckout', function () {
+    return view('user.checkout');
+});
 
 Route::get('/', function () {
     return view('user.home');

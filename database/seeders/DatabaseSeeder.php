@@ -19,5 +19,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('12345'),
             'provider' => "local"
         ]);
+
+        $this->call(LocationsTableSeeder::class);
     }
 }

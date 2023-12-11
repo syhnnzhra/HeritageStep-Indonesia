@@ -17,9 +17,19 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
-        if(Auth::attempt($credentials)){
+        // if(Auth::attempt($credentials)){
+        //     $request->session()->regenerate();
+        //     return redirect()->intended('/dashboard');
+        // }
+
+        if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+
+            if (Auth::user()->role == 'admin') {
+                return redirect('/dashboard');
+            } elseif (Auth::user()->role == 'user') {
+                return redirect('/home');
+            }
         }
 
         return back()->with('loginError', 'Login Failed');

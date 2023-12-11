@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'HSI team',
             'email' => 'herritage_step@gmail.com',
             'password' => bcrypt('12345'),
-            'provider' => "local"
+            'provider' => "local",
+            'role' => 'admin'
         ]);
 
         $this->call(LocationsTableSeeder::class);

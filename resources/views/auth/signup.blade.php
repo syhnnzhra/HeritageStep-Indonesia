@@ -46,6 +46,7 @@
     <form action="/register" method="post">
         @csrf
         <input type="hidden" name="provider" value="local">
+        <input type="hidden" name="role" value="user">
         <div class="group-5-HNd">
             <p class="phone-number-or-email-cfo">Name</p>
             <input type="text" name="name" class="rectangle-47-M7b @error('name') is-invalid @enderror" required>

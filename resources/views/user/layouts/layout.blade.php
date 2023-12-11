@@ -95,14 +95,17 @@
                             <a href="#" class="uk-button uk-button-dafault">usr</a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    <li class="uk-active"><a href="#">Active</a></li>
-                                    <li><a href="#">Item</a></li>
-                                    <li><a href="#">Item</a></li>
+                                    <!-- <li class="uk-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li> -->
+                                    <li><form action="/logout" method="post">
+                                        @csrf
+                                        <button type="submit">Logout</button>
+                                    </form></li>
                                 </ul>
                             </div>
                         @else
-                            <a href="#" class="uk-button custom-mgray-button">Sign In</a>
-                            <a href="#" class="uk-button custom-green-button">Sign Up</a>
+                            <a href="/login" class="uk-button custom-mgray-button">Sign In</a>
+                            <a href="/register" class="uk-button custom-green-button">Sign Up</a>
                         @endif
                     </ul>
                 </div>

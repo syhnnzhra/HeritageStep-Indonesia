@@ -30,7 +30,7 @@ class LocationsTableSeeder extends Seeder
             $data_province = [];
             foreach ($provinces as $a) {
                 $data_province[] = [
-                    'id' => $a['province_id'],
+                    'province_id' => $a['province_id'],
                     'title' => $a['province'],
                 ];
             }
@@ -47,7 +47,7 @@ class LocationsTableSeeder extends Seeder
             $data_city = [];
             foreach ($cities as $b) {
                 $data_city[] = [
-                    'id' => $b['city_id'],
+                    'city_id' => $b['city_id'],
                     'province_id' => $b['province_id'],
                     'title' => $b['city_name'],
                     'type' => $b['type'],

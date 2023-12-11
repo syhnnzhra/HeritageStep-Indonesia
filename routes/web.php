@@ -7,6 +7,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GoogleAuthController;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,12 @@ use App\Http\Controllers\GoogleAuthController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//test ongkir
+Route::resource('/cekot', CheckoutController::class);
+Route::get('/getCity/{province_id}', [CheckoutController::class, 'getCities']);
+Route::post('/cekongkir', [CheckoutController::class, 'check_ongkir']);
+
 
 Route::get('/cek', function () {
     return view('admin.pesanan.index');

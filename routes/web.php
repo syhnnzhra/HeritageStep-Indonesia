@@ -20,6 +20,7 @@ use App\Http\Controllers\CheckoutController;
 |
 */
 
+
 //test ongkir
 Route::resource('/cekot', CheckoutController::class);
 Route::get('/getCity/{province_id}', [CheckoutController::class, 'getCities']);
@@ -32,6 +33,12 @@ Route::get('/cek', function () {
 Route::get('/ckout', function () {
     return view('user.checkout');
 });
+
+Route::get('/', function () {
+    return view('user.home');
+});
+
+Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/', function () {
     return view('user.home');

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password')->nullable();
             $table->string('provider');
             $table->string('provider_id')->unique()->nullable();
+            $table->string('role');
             // $table->string('jeniskelamin')->nullable();
             // $table->string('alamat')->nullable();
             // $table->unsignedBigInteger('city_id')->nullable();

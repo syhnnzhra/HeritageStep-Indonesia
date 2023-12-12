@@ -1,8 +1,12 @@
 
 <!DOCTYPE html>
 <html>
-    <head><link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" /><link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" /><link href="css/admin/style.css" rel="stylesheet" /><title>Document</title></head>
-    
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link href="css/admin/style.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
     <body>
         <div class="v108_799"><div class="v108_800"></div><div class="v108_801">
         </div><span class="v108_804">laporan</span><span class="v108_805">Daftar Pengguna</span>

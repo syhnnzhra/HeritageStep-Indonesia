@@ -29,6 +29,10 @@ Route::get('/cust', function () {
     return view('admin.customers.index');
 });
 
+Route::get('/produk', function () {
+    return view('admin.produk.index');
+});
+
 Route::get('/', function () {
     return view('user.home');
 });

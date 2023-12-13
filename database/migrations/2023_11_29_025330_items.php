@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama');
             $table->unsignedBigInteger('category_id');
             $table->integer('stok');
-            $table->integer('harga');
+            $table->unsignedBigInteger('harga');
             $table->string('keterangan');
             $table->string('foto');
             $table->timestamps();

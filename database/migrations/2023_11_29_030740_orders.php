@@ -18,12 +18,14 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('telephone');
             $table->string('alamat');
-            $table->string('kota');
-            $table->string('provinsi');
+            $table->unsignedBigInteger('city_id');
+            $table->foreign('city_id')->references('city_id')->on('cities');
+            $table->unsignedBigInteger('province_id');
+            $table->foreign('province_id')->references('province_id')->on('provinces');
             $table->string('kode_pos');
             $table->string('rincian_opsional')->nullable();
             $table->string('bank');
-            $table->integer('subtotal');
+            $table->unsignedBigInteger('subtotal');
             $table->string('postal_fee');
             $table->string('no_resi');
             $table->string('status');

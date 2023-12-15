@@ -37,6 +37,9 @@ Route::get('/coba', function () {
 Route::get('/pesanan', function () {
     return view('admin.pesanan.index');
 });
+Route::get('/cust', function () {
+    return view('admin.customers.index');
+});
 
 Route::post('/logout', [LoginController::class, 'logout']);
 

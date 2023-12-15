@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,18 +24,18 @@ use App\Http\Controllers\CheckoutController;
 
 
 
-Route::get('/pesanan', function () {
+
+Route::get('/cek', function () {
     return view('admin.pesanan.index');
 });
-Route::get('/cekdash', function () {
-    return view('admin.dashboard.index');
+Route::get('/ckout', function () {
+    return view('user.checkout');
 });
-
 Route::get('/coba', function () {
     return view('coba');
 });
 
-
+Route::post('/logout', [LoginController::class, 'logout']);
 
 //penting
 
@@ -43,9 +44,20 @@ Route::resource('/cekot', CheckoutController::class);
 Route::get('/getCity/{province_id}', [CheckoutController::class, 'getCities']);
 Route::post('/cekongkir', [CheckoutController::class, 'check_ongkir']);
 
-Route::get('/', function () {
-    return view('user.home');
-});
+Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/products', [HomeController::class, 'product']);
+Route::get('/category', [HomeController::class, 'category']);
+
+Route::post('/logout', [LoginController::class, 'logout']);
+
+// Route::get('/', function () {
+    //     return view('user.home');
+    // });
+Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/products', [HomeController::class, 'product']);
+Route::get('/category', [HomeController::class, 'category']);
 
 Route::post('/logout', [LoginController::class, 'logout']);
 
@@ -67,10 +79,10 @@ Route::group(['middleware' => 'guest'], function () {
 
 //auth login user
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/home', function () {
-        return view('user.home');
-    });
+    Route::get('/home', [HomeController::class, 'index']);
+    Route::get('/carts', [HomeController::class, 'cart']);
 
+    Route::resource('/detail-product', HomeController::class);
     // Route::post('/logout', [LoginController::class, 'logout']);
     
 });

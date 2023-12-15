@@ -22,10 +22,7 @@ use App\Http\Controllers\HomeController;
 */
 
 
-//test ongkir
-Route::resource('/cekot', CheckoutController::class);
-Route::get('/getCity/{province_id}', [CheckoutController::class, 'getCities']);
-Route::post('/cekongkir', [CheckoutController::class, 'check_ongkir']);
+
 
 
 Route::get('/cek', function () {
@@ -34,6 +31,23 @@ Route::get('/cek', function () {
 Route::get('/ckout', function () {
     return view('user.checkout');
 });
+Route::get('/coba', function () {
+    return view('coba');
+});
+
+Route::post('/logout', [LoginController::class, 'logout']);
+
+//penting
+
+//test ongkir
+Route::resource('/cekot', CheckoutController::class);
+Route::get('/getCity/{province_id}', [CheckoutController::class, 'getCities']);
+Route::post('/cekongkir', [CheckoutController::class, 'check_ongkir']);
+
+Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/products', [HomeController::class, 'product']);
+Route::get('/category', [HomeController::class, 'category']);
 
 Route::post('/logout', [LoginController::class, 'logout']);
 

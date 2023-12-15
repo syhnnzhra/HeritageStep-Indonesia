@@ -27,30 +27,51 @@
     
 </div>
 
-<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m my-10 mx-5 mr-5">
-<table class="uk-table uk-table-justify uk-table-divider">
+<table class="uk-table uk-table-hover uk-table-divider ">
+    
     <thead>
+    <table class="uk-table  my-10 mx-5">
+    <caption>Laporan Pengiriman</caption>
+    <tbody>
         <tr>
-            <th class="uk-width-small">tanggal</th>
-            <th>Table Heading</th>
-            <th>Table Heading</th>
-            <th>Table Heading</th>
+            <th>Nama Penerima</th>
+            <th> ID Pesanan</th>
+            <th> Nomor Resi</th>
+            <th> Tanggal Pesanan</th>
+            <th> Total Jumlah Barang</th>
+            <th> Status Pembayaran</th>
+            <th> Status Pengiriman</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Table Data</td>
-            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
-            <td><button class="uk-button uk-button-default" type="button">Button</button></td>
+            <td>THIA</td>
+            <td>HT-11111</td>
+            <td>6498629642817</td>
+            <td>12-12-2023</td>
+            <td>150.000</td>
+            <td>COD</td>
+            <td>Diproses</td>
         </tr>
         <tr>
-            <td>Table Data</td>
-            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
-            <td><button class="uk-button uk-button-default" type="button">Button</button></td>
+            <td>THIA</td>
+            <td>HT-11111</td>
+            <td>6498629642817</td>
+            <td>12-12-2023</td>
+            <td>150.000</td>
+            <td>COD</td>
+            <td>Diproses</td>
+        </tr>
+        <tr>
+            <td>THIA</td>
+            <td>HT-11111</td>
+            <td>6498629642817</td>
+            <td>12-12-2023</td>
+            <td>150.000</td>
+            <td>COD</td>
+            <td>Diproses</td>
         </tr>
     </tbody>
-</table>
-  </div>
-
+</table>    
 
 @endsection

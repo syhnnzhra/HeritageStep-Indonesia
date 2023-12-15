@@ -26,6 +26,13 @@
             background-color: #C7FFC9;
             margin-top: 20px;
         }
+        .badge-color {
+            background-color: #C7FFC9;
+        }
+        .custom-putih-button {
+            background-color: #FFFFFF;
+            margin-top: 20px;
+        }
         
         .promo-banner {
             width: 100%;
@@ -69,10 +76,13 @@
         .custom-footer {
             background-color: #C7FFC9;
         }
+        .kategori-nama{
+            font-size:15px;
+        }
   </style>
 </head>
 <body>
-    <nav class="uk-navbar-container nav">
+    <nav class="uk-navbar-container nav" uk-sticky>
         <div class="uk-container">
             <div uk-navbar>
 
@@ -83,23 +93,22 @@
                 <div class="uk-navbar-center">
                     <ul class="uk-navbar-nav">
                         <li class="uk-active"><a href="/">Home</a></li>
-                        <li><a href="#">Category</a></li>
-                        <li><a href="#">Product</a></li>
-                        <li><a href="#"><img src="flaticon/bag.png" alt="" width="20px"></a></li>
+                        <li><a href="/category">Category</a></li>
+                        <li><a href="/products">Product</a></li>
+                        <li><a href="/carts"><img src="flaticon/bag.png" alt="" width="20px"></a></li>
                     </ul>
                 </div>
                 
                 <div class="uk-navbar-right">
                     <ul class="">
                         @auth
-                            <a href="#" class="uk-button uk-button-dafault">usr</a>
+                            <a href="#" class="uk-button custom-putih-button">{{ auth()->user()->name }}</a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    <!-- <li class="uk-active"><a href="#">Active</a></li>
-                                    <li><a href="#">Item</a></li> -->
+                    <li><a href="#">Product</a></li>
                                     <li><form action="/logout" method="post">
                                         @csrf
-                                        <button type="submit">Logout</button>
+                                        <button type="submit" class="uk-button custom-putih-button">Logout</button>
                                     </form></li>
                                 </ul>
                             </div>
@@ -115,12 +124,7 @@
     </nav>
 
     <!-- slider -->
-    <div class="promo-banner">
-        <div class="promo-content">
-            <h1>Diskon 30%!</h1>
-            <h3>Produk baru aerostreet cyberhoops</h3>
-        </div>
-    </div>
+    @yield('slider')
 
     <div class="kontainer">
         @yield('container')

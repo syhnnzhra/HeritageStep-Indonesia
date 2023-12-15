@@ -1,97 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <title>HERITAGE_STEP Dashboard</title>
-</head>
-<body class="flex h-screen bg-gray-100">
-  <div class="bg-green-800 text-white w-64 p-4 custom-warna">
-    <h2 class="text-2xl font-bold mb-4">HERITAGE_STEP</h2>
-    <ul>
-      <li class="mb-2">
-        <a href="#" class="hover:text-gray-300">dashboard</a>
-      </li>
-      <li class="mb-2">
-        <a href="#" class="hover:text-gray-300">Mengelola Pesanan</a>
-      </li>
-      <li class="mb-2">
-        <a href="#" class="hover:text-gray-300">Mengelola Produk</a>
-      </li>
-      <li class="mb-2">
-        <a href="#" class="hover:text-gray-300">Memproses Pembayaran</a>
-      </li>
-      <li class="mb-2">
-        <a href="#" class="hover:text-gray-300">Daftar Pengguna</a>
-      </li>
-      <li class="mb-2">
-        <a href="#" class="hover:text-gray-300">Laporan</a>
-      </li>
-    </ul>
-  </div>
-
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-8">
-
-<!-- Total Pendapatan -->
-<div class="p-4">
-  <div class="bg-white rounded-lg shadow p-6">
-    <h2 class="text-lg font-semibold text-gray-800 mb-4">Total Pendapatan</h2>
-    <p class="text-3xl font-bold text-green-500">$10,000</p>
-  </div>
-</div>
-
-<!-- Total Produk -->
-<div class="p-4">
-  <div class="bg-white rounded-lg shadow p-6">
-    <h2 class="text-lg font-semibold text-gray-800 mb-4">Total Produk</h2>
-    <p class="text-3xl font-bold text-blue-500">500</p>
-  </div>
-</div>
-
-<!-- Jumlah Keuntungan -->
-<div class="p-4">
-  <div class="bg-white rounded-lg shadow p-6">
-    <h2 class="text-lg font-semibold text-gray-800 mb-4">Jumlah Keuntungan</h2>
-    <p class="text-3xl font-bold text-yellow-500">$5,000</p>
-  </div>
-</div>
-<div class="col-span-3 mt-8">
-      <a href="#" class="block max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-      </a>
+@extends('admin.layouts.main')
+@section('container')
+<div class="uk-child-width-1-4@s uk-grid-match" uk-grid>
+    <div>
+        <div class="uk-card uk-card-hover uk-card-body">
+            <h3 class="uk-card-title">Hover</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+    </div>
+    <div>
+        <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+            <h3 class="uk-card-title">Default</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+    </div>
+    <div>
+        <div class="uk-card uk-card-primary uk-card-hover uk-card-body uk-light">
+            <h3 class="uk-card-title">Primary</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+    </div>
+    <div>
+        <div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-light">
+            <h3 class="uk-card-title">Secondary</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
     </div>
 </div>
 
-<!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-8">
-    <div class="col-span-3 mt-8">
-      <a href="#" class="block max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-      </a>
-    </div>
-  </div> -->
-  
-  <!-- <div class="flex justify-center card">
-      <p>
-        Total Pendapatan
-      </p>
-    </div>
-
-    <div class="flex justify-center card">
-      <p>
-        Total Produk
-      </p>
-    </div>
-
-    <div class="flex justify-center card">
-      <p>
-        Jumlah Keuntungan
-      </p>
-    </div>
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m my-10">
+<table class="uk-table uk-table-justify uk-table-divider">
+    <thead>
+        <tr>
+            <th class="uk-width-small">tanggal</th>
+            <th>Table Heading</th>
+            <th>Table Heading</th>
+            <th>Table Heading</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Table Data</td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
+            <td><button class="uk-button uk-button-default" type="button">Button</button></td>
+        </tr>
+        <tr>
+            <td>Table Data</td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
+            <td><button class="uk-button uk-button-default" type="button">Button</button></td>
+        </tr>
+    </tbody>
+</table>
+  </div>
 
 
-  </div> -->
-</body>
-</html>
+@endsection

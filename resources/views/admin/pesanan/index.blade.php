@@ -6,9 +6,14 @@
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
     <link href="css/admin/style.css" rel="stylesheet" />
     <title>Document</title>
+    <!-- wajib -->
+    @vite('resources/css/app.css') 
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="admin/css/pesanan.css">
+    <!-- sampai sini -->
 </head>
     <body>
-        <div class="v108_799"><div class="v108_800"></div><div class="v108_801">
+        <!-- <div class="v108_799"><div class="v108_800"></div><div class="v108_801">
         </div><span class="v108_804">laporan</span><span class="v108_805">Daftar Pengguna</span>
         <div class="v108_808"></div>
         <div class="v108_809"></div>
@@ -103,7 +108,68 @@
         <span class="v116_1938">250</span>
         <span class="v116_1939">250</span>
         <span class="v116_1940">250</span>
-    </div>
+    </div> -->
+    <body class="flex h-screen bg-gray-100">
+    <div class="bg-green-800 text-white w-64 p-4 custom-warna">
+    <h2 class="text-2xl font-bold mb-4">HERITAGE_STEP</h2>
+    <ul>
+      <li class="mb-2">
+        <a href="#" class="hover:text-gray-300">dashboard</a>
+      </li>
+      <li class="mb-2">
+        <a href="#" class="hover:text-gray-300">Mengelola Pesanan</a>
+      </li>
+      <li class="mb-2">
+        <a href="#" class="hover:text-gray-300">Mengelola Produk</a>
+      </li>
+      <li class="mb-2">
+        <a href="#" class="hover:text-gray-300">Memproses Pembayaran</a>
+        <li class="mb-2">
+        <a href="#" class="hover:text-gray-300">Daftar Pengguna</a>
+      </li>
+      <li class="mb-2">
+        <a href="#" class="hover:text-gray-300">Laporan</a>
+      </li>
+    </ul>
+  </div>
+  </div>
 
+
+<div class="flex justify-center card">
+    <p>
+        diproses
+    </p>
+</div>
+
+<div class="flex justify-center card">
+    <p>
+       dikirim
+    </p>
+</div>
+
+<div class="flex justify-center card">
+    <p>
+       selesai
+    </p>
+</div>
+
+<!-- <div class="w-[281px] h-16 bg-stone-400 rounded-[20px]"></div> -->
+<!-- 
+<div class="bg-white dark:bg-slate-800 rounded-lg px-9 py-80 ring-1 ring-slate-900/5 shadow-xl">
+  <div>
+    <span class="inline-flex items-center justify-center p-2 bg-indigo-500 rounded-md shadow-lg">
+      <svg class="h-3 w-3 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="12 12 12 12" stroke="currentColor" aria-hidden="true"><!-- ... --></svg>
+    <!-- </span> -->
+  <!-- </div>
+  <h3 class="text-slate-900 dark:text-white mt-5 text-base font-medium tracking-tight">Writes Upside-Down</h3>
+  <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm">
+    The Zero Gravity Pen can be used to write in any orientation, including upside-down. It even works in outer space.
+  </p>
+</div> -->
+
+<div class="box-content h-32 w-32 p-4 border-4 box">
+ 
+</div>
+ 
 </body>
 </html>

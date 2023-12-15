@@ -21,24 +21,27 @@ use App\Http\Controllers\CheckoutController;
 */
 
 
+
+
+Route::get('/pesanan', function () {
+    return view('admin.pesanan.index');
+});
+Route::get('/cekdash', function () {
+    return view('admin.dashboard.index');
+});
+
+Route::get('/coba', function () {
+    return view('coba');
+});
+
+
+
+//penting
+
 //test ongkir
 Route::resource('/cekot', CheckoutController::class);
 Route::get('/getCity/{province_id}', [CheckoutController::class, 'getCities']);
 Route::post('/cekongkir', [CheckoutController::class, 'check_ongkir']);
-
-
-Route::get('/cek', function () {
-    return view('admin.pesanan.index');
-});
-Route::get('/ckout', function () {
-    return view('user.checkout');
-});
-
-Route::get('/', function () {
-    return view('user.home');
-});
-
-Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/', function () {
     return view('user.home');

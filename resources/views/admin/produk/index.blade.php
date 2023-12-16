@@ -3,8 +3,19 @@
 <div class="uk-card uk-card-default uk-card-body uk-width-1-1@m ">
     <h3 class="uk-card-title">Produk</h3>
 </div>
+<div class="uk-table uk-table-hover uk-table-middle uk-table-divider my-10 mx-5 icon">
+    <a href="#" class="uk-icon-link uk-margin-small-right" uk-icon="plus"></a>
+    <a href="#" class="uk-icon-link uk-margin-small-right" uk-icon="file-edit"></a>
+    <a href="#" class="uk-icon-link" uk-icon="trash"></a>
+</div>
+<div class="uk-margin">
+    <form class="uk-search uk-search-default">
+        <a href="" class="uk-search-icon-flip" uk-search-icon></a>
+        <input class="uk-search-input" type="search" placeholder="Search" aria-label="Search">
+    </form>
+</div>
 <div class="uk-overflow-auto">
-    <table class="uk-table uk-table-hover uk-table-middle uk-table-divider my-10 mx-5">
+    <table class="uk-table uk-table-hover uk-table-middle uk-table-divider my-0 mx-5">
         <thead>
             <tr>
                 <th class="uk-table-shrink"></th>
@@ -64,4 +75,6 @@
         </tbody>
     </table>
 </div>
+
+
 @endsection

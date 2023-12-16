@@ -3,16 +3,17 @@
 <div class="uk-card uk-card-default uk-card-body uk-width-1-1@m ">
     <h3 class="uk-card-title">Produk</h3>
 </div>
-<div class="uk-table uk-table-hover uk-table-middle uk-table-divider my-10 mx-5 icon">
-    <a href="#" class="uk-icon-link uk-margin-small-right" uk-icon="plus"></a>
+<div class="uk-table uk-table-hover uk-table-middle uk-table-divider my-10 ml-96">
+    <a href="#" class="uk-icon-link uk-margin-small-right costum.ikon" uk-icon="plus" ></a>
     <a href="#" class="uk-icon-link uk-margin-small-right" uk-icon="file-edit"></a>
     <a href="#" class="uk-icon-link" uk-icon="trash"></a>
-</div>
-<div class="uk-margin">
+
+    <!-- <div class="uk-margin"> -->
     <form class="uk-search uk-search-default">
         <a href="" class="uk-search-icon-flip" uk-search-icon></a>
         <input class="uk-search-input" type="search" placeholder="Search" aria-label="Search">
     </form>
+<!-- </div> -->
 </div>
 <div class="uk-overflow-auto">
     <table class="uk-table uk-table-hover uk-table-middle uk-table-divider my-0 mx-5">
@@ -30,7 +31,7 @@
         <tbody>
             <tr>
                 <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td>
-                <td><img class="uk-preserve-width uk-border-circle" src="images/avatar.jpg" width="40" height="40" alt=""></td>
+                <td><div class="image-wrapper"><img class="image" src="css/assets/pro1.png"/></div></td>
                 <td class="uk-table-link">
                     <a class="uk-link-reset" href="">sepatu</a>
                 </td>
@@ -41,7 +42,7 @@
             </tr>
             <tr>
                 <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td>
-                <td><img class="uk-preserve-width uk-border-circle" src="images/avatar.jpg" width="40" height="40" alt=""></td>
+                <td><div class="image-wrapper"><img class="image" src="css/assets/pro1.png"/></div></td>
                 <td class="uk-table-link">
                     <a class="uk-link-reset" href="">sepatu</a>
                 </td>
@@ -52,7 +53,7 @@
             </tr>
             <tr>
                 <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td>
-                <td><img class="uk-preserve-width uk-border-circle" src="images/avatar.jpg" width="40" height="40" alt=""></td>
+                <td><div class="image-wrapper"><img class="image" src="css/assets/pro1.png"/></div></td>
                 <td class="uk-table-link">
                     <a class="uk-link-reset" href="">sepatu</a>
                 </td>
@@ -63,7 +64,7 @@
             </tr>
             <tr>
                 <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td>
-                <td><img class="uk-preserve-width uk-border-circle" src="images/avatar.jpg" width="40" height="40" alt=""></td>
+                <td><div class="image-wrapper"><img class="image" src="css/assets/pro1.png"/></div></td>
                 <td class="uk-table-link">
                     <a class="uk-link-reset" href="">sepatu</a>
                 </td>

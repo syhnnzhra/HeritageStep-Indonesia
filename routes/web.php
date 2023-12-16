@@ -40,6 +40,9 @@ Route::get('/pesanan', function () {
 Route::get('/cust', function () {
     return view('admin.customers.index');
 });
+Route::get('/pro', function () {
+    return view('admin.produk.index');
+});
 
 Route::post('/logout', [LoginController::class, 'logout']);
 

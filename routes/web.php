@@ -25,14 +25,17 @@ use App\Http\Controllers\HomeController;
 
 
 
-Route::get('/cek', function () {
-    return view('admin.pesanan.index');
+Route::get('/cekdash', function () {
+    return view('admin.dashboard.index');
 });
 Route::get('/ckout', function () {
     return view('user.checkout');
 });
 Route::get('/coba', function () {
     return view('coba');
+});
+Route::get('/pesanan', function () {
+    return view('admin.pesanan.index');
 });
 
 Route::post('/logout', [LoginController::class, 'logout']);

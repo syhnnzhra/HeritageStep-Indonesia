@@ -46,6 +46,9 @@ Route::get('/pro', function () {
 Route::get('/edit', function () {
     return view('admin.edit.index');
 });
+Route::get('/hapus', function () {
+    return view('admin.hapus_produk.index');
+});
 Route::post('/logout', [LoginController::class, 'logout']);
 
 //penting

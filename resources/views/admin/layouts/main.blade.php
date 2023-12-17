@@ -11,29 +11,67 @@
 <title>HERITAGE_STEP Dashboard</title>
 </head>
 <body class="flex h-screen bg-gray-100">
-  <div class="bg-green-800 text-white w-64 p-4 custom-warna">
+  <div class="bg-green-800 text-white w-64 p-4 custom-warna ">
     <h2 class="text-2xl font-bold mb-4">HERITAGE_STEP</h2>
     <ul>
       <li class="mb-2">
-        <a href="#" class="hover:text-gray-300">dashboard</a>
+        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EAECCC;" >dashboard</a>
       </li>
       <li class="mb-2">
-        <a href="#" class="hover:text-gray-300">Mengelola Pesanan</a>
+        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EAECCC;">Mengelola Pesanan</a>
       </li>
       <li class="mb-2">
-        <a href="#" class="hover:text-gray-300">Mengelola Produk</a>
+        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EAECCC;">Mengelola Produk</a>
       </li>
       <li class="mb-2">
-        <a href="#" class="hover:text-gray-300">Memproses Pembayaran</a>
+        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EAECCC;" >Memproses Pembayaran</a>
       </li>
       <li class="mb-2">
-        <a href="#" class="hover:text-gray-300">Daftar Pengguna</a>
+        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EAECCC;" >Daftar Pengguna</a>
       </li>
       <li class="mb-2">
-        <a href="#" class="hover:text-gray-300">Laporan</a>
+        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EAECCC;"  >Laporan</a>
       </li>
     </ul>
   </div>
+<style>
+.uk-card {
+  background:#EAECCC;
+}
+.custom-warna {
+  background-color:#CD8D7A;
+}
+.flex {
+  background-color:#EAECCC;
+}
+.uk-search{
+  background-color:#CD8D7A;
+  font-color:#00000;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.uk-table-shrink{
+  background-color:#CD8D7A;
+  font-color:#00000;
+}
+.uk-width-small{
+  background-color:#CD8D7A;
+}
+.uk-table-expand{
+  background-color:#CD8D7A;
+  font-family:#00000;
+}
+.uk-icon-link {
+  background-color:#CD8D7A;
+  font-color:#00000;
+  margin-right: 14px;
+}
+
+
+
+
+</style>
 
   <div class="container" >
     @yield('container')

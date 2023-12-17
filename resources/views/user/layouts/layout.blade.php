@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>HeritageStep</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.17.11/dist/css/uikit.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         .kontainer{
             margin-top: 50px;
@@ -95,7 +96,7 @@
                         <li class="uk-active"><a href="/">Home</a></li>
                         <li><a href="/category">Category</a></li>
                         <li><a href="/products">Product</a></li>
-                        <li><a href="/carts"><img src="flaticon/bag.png" alt="" width="20px"></a></li>
+                        <li><a href="/cart"><img src="flaticon/bag.png" alt="" width="20px"></a></li>
                     </ul>
                 </div>
                 
@@ -105,7 +106,8 @@
                             <a href="#" class="uk-button custom-putih-button">{{ auth()->user()->name }}</a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
-                    <li><a href="#">Product</a></li>
+                                    <li><a href="/my-order">Order</a></li>
+                                    <li><a href="/track">Tracking</a></li>
                                     <li><form action="/logout" method="post">
                                         @csrf
                                         <button type="submit" class="uk-button custom-putih-button">Logout</button>

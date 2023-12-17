@@ -90,10 +90,14 @@ Route::group(['middleware' => 'guest'], function () {
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', [HomeController::class, 'index']);
     Route::get('/carts', [HomeController::class, 'cart']);
+    Route::get('/my-order', [HomeController::class, 'order']);
+    Route::get('/track', [HomeController::class, 'track']);
 
     Route::resource('/detail-product', HomeController::class);
     // Route::post('/logout', [LoginController::class, 'logout']);
     
+    
+    Route::get('/cart', [HomeController::class, 'cart']);
 });
 
 // auth login admin

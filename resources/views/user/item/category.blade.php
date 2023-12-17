@@ -55,10 +55,19 @@
         </fieldset>
     </form>
 
-    <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
-        <div class="uk-card-badge uk-label">Badge</div>
-        <h3 class="uk-card-title">Title</h3>
-        <p>Lorem ipsum color sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <div class="uk-child-width-1-5@m" uk-grid>
+    @foreach ($kategori as $kat)
+        <div>
+            <a href="/category?category={{ $kat->id }}">
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-badge uk-label">{{ $kat->nama }}</div>
+                    <div class="uk-card-media-top">
+                        <img src="https://source.unsplash.com/400x400/?category-products" width="1800" height="1200" alt="">
+                    </div>
+                </div>
+            </a>
+        </div>
+    @endforeach
     </div>
 </div>
 @endsection

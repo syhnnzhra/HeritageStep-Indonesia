@@ -26,10 +26,11 @@
 
     <div>
     <div class="uk-overflow-auto">
-    <table class="uk-table uk-table-hover uk-table-middle uk-table-divider underline-offset-auto my-5">
+    <table class="uk-table uk-table-hover uk-table-middle uk-table-divider underline-offset-auto   my-10 mx-5">
         <thead>
             <tr>
                 <th class="uk-table-shrink"></th>
+                <caption>Laporan Pengiriman</caption>
                 <th class="uk-table-shrink">photo</th>
                 <th class="uk-table-expand">Nama</th>
                 <th class="uk-width-small">Harga</th>

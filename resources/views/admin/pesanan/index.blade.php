@@ -27,12 +27,9 @@
     
 </div>
 
-<table class="uk-table uk-table-hover uk-table-divider ">
-    
-    <thead>
-    <table class="uk-table  my-10 mx-5">
+<table class="uk-table uk-table-hover uk-table-divider my-10 mx-5 ">
     <caption>Laporan Pengiriman</caption>
-    <tbody>
+    <thead>
         <tr>
             <th>Nama Penerima</th>
             <th> ID Pesanan</th>

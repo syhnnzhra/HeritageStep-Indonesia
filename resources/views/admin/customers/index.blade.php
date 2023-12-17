@@ -39,7 +39,7 @@
     <div class="uk-card-header">
         <div class="uk-grid-small uk-flex-middle " uk-grid>
             <div class="uk-width-auto">
-                <img class="uk-border-circle" width="40" height="40" src="images/avatar.jpg" alt="Avatar">
+            <td><div class="image-wrapper"><img class="image" src="css/assets/image-186.png"/></div></td>
             </div>
             <div class="uk-width-expand">
                 <h3 class="uk-card-title uk-margin-remove-bottom">Thia</h3>

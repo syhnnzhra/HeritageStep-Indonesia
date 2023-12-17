@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @section('container')
-<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m ">
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m cust">
     <h3 class="uk-card-title">Data Pelanggan</h3>
 </div>
 <!-- tabel 1 -->

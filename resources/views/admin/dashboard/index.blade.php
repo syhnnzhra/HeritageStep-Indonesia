@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @section('container')
-<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m">
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m ">
     <h3 class="uk-card-title">Dashboard</h3>
 </div>
 <div class="uk-child-width-1-3@s uk-grid-match " uk-grid>
@@ -26,21 +26,21 @@
 
     <div>
     <div class="uk-overflow-auto">
-    <table class="uk-table uk-table-hover uk-table-middle uk-table-divider underline-offset-auto   my-10 mx-5">
+    <table class="uk-table uk-table-hover uk-table-middle uk-table-divider underline-offset-auto my-5 mx-5">
         <thead>
             <tr>
                 <th class="uk-table-shrink"></th>
                 <caption>Laporan Pengiriman</caption>
-                <th class="uk-table-shrink">photo</th>
-                <th class="uk-table-expand">Nama</th>
-                <th class="uk-width-small">Harga</th>
+                <th class="uk-table-expand">Barang</th>
+                <th class="uk-width-small">Nama Barang</th>
+                <th class="uk-table-shrink uk-text-nowrap">Harga Barang</th>
                 <th class="uk-table-shrink uk-text-nowrap">status</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td>
-                <td><img class="uk-preserve-width uk-border-circle" src="images/avatar.jpg" width="40" height="40" alt=""></td>
+                <!-- <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td> -->
+                <td><div class="image-wrapper"><img class="image" src="css/assets/rectangle-39.png" width="80" height="80"/></div></td>
                 <td class="uk-table-link">
                     <a class="uk-link-reset" href="">Baju</a>
                 </td>
@@ -48,8 +48,8 @@
                 <td class="uk-text-nowrap">Diproses</td>
             </tr>
             <tr>
-                <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td>
-                <td><img class="uk-preserve-width uk-border-circle" src="images/avatar.jpg" width="40" height="40" alt=""></td>
+                <!-- <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td> -->
+                <td><div class="image-wrapper"><img class="image" src="css/assets/rectangle-39.png" width="80" height="80"/></div></td>
                 <td class="uk-table-link">
                     <a class="uk-link-reset" href="">Sepatu</a>
                 </td>
@@ -57,8 +57,8 @@
                 <td class="uk-text-nowrap">Selesai</td>
             </tr>
             <tr>
-                <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td>
-                <td><img class="uk-preserve-width uk-border-circle" src="images/avatar.jpg" width="40" height="40" alt=""></td>
+                <!-- <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td> -->
+                <td><div class="image-wrapper"><img class="image" src="css/assets/rectangle-39.png" width="80" height="80"/></div></td>
                 <td class="uk-table-link">
                     <a class="uk-link-reset" href="">baju A</a>
                 </td>

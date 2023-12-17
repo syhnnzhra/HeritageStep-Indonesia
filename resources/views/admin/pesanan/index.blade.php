@@ -28,19 +28,19 @@
 </div>
 
 <table class="uk-table uk-table-hover uk-table-divider my-10 mx-5 ">
-    <caption>Laporan Pengiriman</caption>
+    <caption style="color:black">Laporan Pengiriman</caption>
     <thead>
         <tr>
-            <th>Nama Penerima</th>
-            <th> ID Pesanan</th>
-            <th> Nomor Resi</th>
-            <th> Tanggal Pesanan</th>
-            <th> Total Jumlah Barang</th>
-            <th> Status Pembayaran</th>
-            <th> Status Pengiriman</th>
+            <th style="color:black; background-color:#39A7FF;">Nama Penerima</th>
+            <th style="color:black; background-color:#39A7FF;"> ID Pesanan</th>
+            <th style="color:black; background-color:#39A7FF;"> Nomor Resi</th>
+            <th style="color:black; background-color:#39A7FF;"> Tanggal Pesanan</th>
+            <th style="color:black; background-color:#39A7FF;"> Total Jumlah Barang</th>
+            <th style="color:black; background-color:#39A7FF;"> Status Pembayaran</th>
+            <th style="color:black; background-color:#39A7FF;"> Status Pengiriman</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody style="color:black">
         <tr>
             <td>THIA</td>
             <td>HT-11111</td>
@@ -49,6 +49,42 @@
             <td>150.000</td>
             <td>COD</td>
             <td>Diproses</td>
+        </tr>
+        <tr>
+            <td>THIA</td>
+            <td>HT-11111</td>
+            <td>6498629642817</td>
+            <td>12-12-2023</td>
+            <td>150.000</td>
+            <td>COD</td>
+            <td>Diproses</td>
+        </tr>
+        <tr>
+            <td>THIA</td>
+            <td>HT-11111</td>
+            <td>6498629642817</td>
+            <td>12-12-2023</td>
+            <td>150.000</td>
+            <td>COD</td>
+            <td>selesai</td>
+        </tr>
+        <tr>
+            <td>THIA</td>
+            <td>HT-11111</td>
+            <td>6498629642817</td>
+            <td>12-12-2023</td>
+            <td>150.000</td>
+            <td>COD</td>
+            <td>selesai</td>
+        </tr>
+        <tr>
+            <td>THIA</td>
+            <td>HT-11111</td>
+            <td>6498629642817</td>
+            <td>12-12-2023</td>
+            <td>150.000</td>
+            <td>COD</td>
+            <td>selesai</td>
         </tr>
         <tr>
             <td>THIA</td>

@@ -43,7 +43,9 @@ Route::get('/cust', function () {
 Route::get('/pro', function () {
     return view('admin.produk.index');
 });
-
+Route::get('/edit', function () {
+    return view('admin.edit.index');
+});
 Route::post('/logout', [LoginController::class, 'logout']);
 
 //penting

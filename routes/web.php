@@ -50,6 +50,9 @@ Route::get('/edit', function () {
 Route::get('/hapus', function () {
     return view('admin.hapus_produk.index');
 });
+Route::get('/add', function () {
+    return view('admin.tambah_produk.index');
+});
 Route::post('/logout', [LoginController::class, 'logout']);
 
 //penting

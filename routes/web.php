@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,15 +90,16 @@ Route::group(['middleware' => 'guest'], function () {
 //auth login user
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', [HomeController::class, 'index']);
-    Route::get('/carts', [HomeController::class, 'cart']);
+    // Route::get('/carts', [HomeController::class, 'cart']);
     Route::get('/my-order', [HomeController::class, 'order']);
     Route::get('/track', [HomeController::class, 'track']);
 
     Route::resource('/detail-product', HomeController::class);
     // Route::post('/logout', [LoginController::class, 'logout']);
+    Route::post('/order/item/{item_id}', [OrderController::class, 'orderItem'])->name('order.item');
     
     
-    Route::get('/cart', [HomeController::class, 'cart']);
+    Route::get('/carts', [CartController::class, 'showCart']);
 });
 
 // auth login admin

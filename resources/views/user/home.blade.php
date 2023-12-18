@@ -61,6 +61,7 @@
                 </div>
                 <div class="uk-card-body">
                     <h3 class="uk-card-title">{{ $item->nama }}</h3>
+                    <h4 class="uk-card-title">Rp {{ number_format($item->harga) }}</h4>
                     <p>{{ $item->keterangan }}</p>
                     <!-- <a href="/detail-product/{{ $item->id }}" class="uk-button custom-green-button">Buy Now!</a> -->
                     @auth

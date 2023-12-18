@@ -96,7 +96,7 @@
                         <li class="uk-active"><a href="/">Home</a></li>
                         <li><a href="/category">Category</a></li>
                         <li><a href="/products">Product</a></li>
-                        <li><a href="/cart"><img src="flaticon/bag.png" alt="" width="20px"></a></li>
+                        <li><a href="/carts"><img src="flaticon/bag.png" alt="" width="20px"></a></li>
                     </ul>
                 </div>
                 

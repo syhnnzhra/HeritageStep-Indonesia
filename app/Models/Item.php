@@ -13,4 +13,8 @@ class Item extends Model
     {
         return $this->belongsTo('App\Models\Category', 'id','id');
     }
+    public function Item()
+    {
+        return $this->hasMany('App\Models\OderDetail', 'item_id','id');
+    }
 }

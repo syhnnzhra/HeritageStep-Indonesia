@@ -1,16 +1,17 @@
 @extends('admin.layouts.main')
 @section('container')
-<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m ">
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m produk">
     <h3 class="uk-card-title">Produk</h3>
 </div>
+<!-- icon -->
 <div class="uk-table uk-table-hover uk-table-middle uk-table-divider my-10 ml-96">
-    <a href="#" class="uk-icon-link uk-margin-small-right costum.ikon" uk-icon="plus" ></a>
-    <a href="#" class="uk-icon-link uk-margin-small-right" uk-icon="file-edit"></a>
-    <a href="#" class="uk-icon-link" uk-icon="trash"></a>
+    <a href="#" class="uk-icon-link uk-margin-small-right costum.ikon" style="color:black;" uk-icon="plus" ></a>
+    <a href="#" class="uk-icon-link uk-margin-small-right" style="color:black;" uk-icon="file-edit"></a>
+    <a href="#" class="uk-icon-link" style="color:black;" uk-icon="trash"></a>
 
     <!-- <div class="uk-margin"> -->
     <form class="uk-search uk-search-default">
-        <a href="" class="uk-search-icon-flip" uk-search-icon></a>
+        <a href="" class="uk-search-icon-flip" uk-search-icon style="color:black;"></a>
         <input class="uk-search-input" type="search" placeholder="Search" aria-label="Search">
     </form>
 <!-- </div> -->
@@ -20,12 +21,12 @@
         <thead>
             <tr>
                 <th class="uk-table-shrink"></th>
-                <th class="uk-table-shrink">Produk</th>
-                <th class="uk-width-small">Nama Produk</th>
-                <th class="uk-table-expand">Deskripsi</th>
-                <th class="uk-table-shrink uk-text-nowrap">Id Produk</th>
-                <th class="uk-table-shrink uk-text-nowrap">Harga</th>
-                <th class="uk-table-shrink uk-text-nowrap">Stock</th>
+                <th class="uk-table-shrink" style="color:black;">Produk</th>
+                <th class="uk-width-small" style="color:black;">Nama Produk</th>
+                <th class="uk-table-expand" style="color:black;">Deskripsi</th>
+                <th class="uk-table-shrink uk-text-nowrap" style="color:black;">Id Produk</th>
+                <th class="uk-table-shrink uk-text-nowrap"style="color:black;">Harga</th>
+                <th class="uk-table-shrink uk-text-nowrap"style="color:black;">Stock</th>
             </tr>
         </thead>
         <tbody>

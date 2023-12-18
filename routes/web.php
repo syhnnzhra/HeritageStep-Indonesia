@@ -7,9 +7,9 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GoogleAuthController;
-use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\RajaOngkirController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,11 +48,6 @@ Route::get('/pro', function () {
 Route::post('/logout', [LoginController::class, 'logout']);
 
 //penting
-
-//test ongkir
-Route::resource('/cekot', CheckoutController::class);
-Route::get('/getCity/{province_id}', [CheckoutController::class, 'getCities']);
-Route::post('/cekongkir', [CheckoutController::class, 'check_ongkir']);
 
 Route::get('/', [HomeController::class, 'index']);
 
@@ -97,6 +92,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/detail-product', HomeController::class);
     // Route::post('/logout', [LoginController::class, 'logout']);
     Route::post('/order/item/{item_id}', [OrderController::class, 'orderItem'])->name('order.item');
+
+    Route::get('/ongkir', [RajaOngkirController::class, 'index']);
+    Route::get('/get-cities', [RajaOngkirController::class, 'getCities']);
+    Route::post('/calculate-shipping-cost', [RajaOngkirController::class, 'calculateShippingCost'])->name('calculateShippingCost');
     
     
     Route::get('/carts', [CartController::class, 'showCart']);

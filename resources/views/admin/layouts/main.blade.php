@@ -15,61 +15,72 @@
     <h2 class="text-2xl font-bold mb-4">HERITAGE_STEP</h2>
     <ul>
       <li class="mb-2">
-        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EAECCC;" >dashboard</a>
+        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EEF5FF;" >dashboard</a>
       </li>
       <li class="mb-2">
-        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EAECCC;">Mengelola Pesanan</a>
+        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EEF5FF;">Mengelola Pesanan</a>
       </li>
       <li class="mb-2">
-        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EAECCC;">Mengelola Produk</a>
+        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EEF5FF;">Mengelola Produk</a>
       </li>
       <li class="mb-2">
-        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EAECCC;" >Memproses Pembayaran</a>
+        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EEF5FF;" >Memproses Pembayaran</a>
       </li>
       <li class="mb-2">
-        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EAECCC;" >Daftar Pengguna</a>
+        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EEF5FF;" >Daftar Pengguna</a>
       </li>
       <li class="mb-2">
-        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EAECCC;"  >Laporan</a>
+        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EEF5FF;"  >Laporan</a>
       </li>
     </ul>
   </div>
 <style>
+  //dashboard
 .uk-card {
-  background:#EAECCC;
+  background-color:#39A7FF;
 }
 .custom-warna {
-  background-color:#CD8D7A;
+  background-color:#39A7FF;
 }
 .flex {
-  background-color:#EAECCC;
+  background-color:#EEF5FF;
 }
 .uk-search{
-  background-color:#CD8D7A;
+  background-color:#39A7FF;
   font-color:#00000;
   align-items: center;
   justify-content: center;
   display: flex;
 }
 .uk-table-shrink{
-  background-color:#CD8D7A;
+  background-color:#39A7FF; //biru
   font-color:#00000;
 }
 .uk-width-small{
-  background-color:#CD8D7A;
+  background-color:#39A7FF;
 }
 .uk-table-expand{
-  background-color:#CD8D7A;
-  font-family:#00000;
+  background-color:#39A7FF;
 }
 .uk-icon-link {
   background-color:#CD8D7A;
   font-color:#00000;
   margin-right: 14px;
 }
+/* .uk-text-nowrap{
+  background-color:#39A7FF;
+} */
 
 
-
+//pesanan
+.uk-table-hover{
+  background-color:#39A7FF;
+}
+.uk-card-hover {
+  background-color:#39A7FF;
+}
+//produk
+//cust
 
 </style>
 

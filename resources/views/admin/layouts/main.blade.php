@@ -10,7 +10,12 @@
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.11/dist/js/uikit-icons.min.js"></script>
 <title>HERITAGE_STEP Dashboard</title>
 </head>
-
+<span class="">
+            <a href="#">customers</a>
+            <a href="#">dashboard</a>
+            <a href="#">produk</a>
+            <a href="#">pesanan</a>
+        </span>
 <body class="flex h-screen bg-gray-100">
   <div class="bg-green-800 text-white w-64 p-4 custom-warna ">
     <h2 class="text-2xl font-bold mb-4">HERITAGE_STEP</h2>

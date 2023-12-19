@@ -46,14 +46,26 @@ Route::get('/pro', function () {
 });
 Route::get('/edit', function () {
     return view('admin.edit.index');
+    // public function insertdata(request $request) {
+    //     employee::create($request->all());
+    //     return redirect()->route('pro')
+    // };
 });
 Route::get('/hapus', function () {
     return view('admin.hapus_produk.index');
 });
 Route::get('/add', function () {
     return view('admin.tambah_produk.index');
+    
 });
-Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::post('/logout', [LoginController::class, 'logout']); 
+Route::get('/admin/{id}/edit', 'PostController@edit')->name('posts.edit');
+Route::put('/posts/{id}', 'PostController@update')->name('posts.update');
+// public function insertdata(request $request) {
+//     employee::create($request->all());
+//     return redirect()->route('pro')
+// };
 
 //penting
 

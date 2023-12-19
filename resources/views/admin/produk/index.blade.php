@@ -4,10 +4,10 @@
     <h3 class="uk-card-title">Produk</h3>
 </div>
 <!-- icon -->
-<div class="uk-table uk-table-hover uk-table-middle uk-table-divider my-10 ml-96">
-    <a href="#" class="uk-icon-link uk-margin-small-right costum.ikon" style="color:black;" uk-icon="plus" ></a>
-    <a href="#" class="uk-icon-link uk-margin-small-right" style="color:black;" uk-icon="file-edit"></a>
-    <a href="#" class="uk-icon-link" style="color:black;" uk-icon="trash"></a>
+<div class="uk-table uk-table-divider my-10 ml-96">
+    <a href="/add" class="uk-icon-link costum.ikon" style="color:black;" uk-icon="plus" ></a>
+    <a href="/edit" class="uk-icon-link uk-margin-small-right" style="color:black;" uk-icon="file-edit"></a>
+    <a href="/hapus" class="uk-icon-link" style="color:black;" uk-icon="trash"></a>
 
     <!-- <div class="uk-margin"> -->
     <form class="uk-search uk-search-default">

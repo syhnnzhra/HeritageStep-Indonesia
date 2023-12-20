@@ -58,7 +58,7 @@
     <div class="uk-child-width-1-5@m" uk-grid>
     @foreach ($kategori as $kat)
         <div>
-            <a href="/category?category={{ $kat->id }}">
+            <a href="{{ url('/category-products/' . $kat->id) }}">
                 <div class="uk-card uk-card-default">
                     <div class="uk-card-badge uk-label">{{ $kat->nama }}</div>
                     <div class="uk-card-media-top">

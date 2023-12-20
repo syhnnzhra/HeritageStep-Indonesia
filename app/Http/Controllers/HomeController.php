@@ -20,11 +20,29 @@ class HomeController extends Controller
         return view('user.item.detail');
     }
     
+    // public function product(){
+    //     return view('user.item.index', [
+    //         'kategori' => Category::latest()->take(5)->get(),
+    //         'items' => Item::latest()->take(12)->get()
+    //     ]);
+    // }
+
     public function product(){
-        return view('user.item.index', [
-            'kategori' => Category::latest()->take(5)->get(),
-            'items' => Item::latest()->take(12)->get()
-        ]);
+        $category = null;
+
+        if (request('category')) {
+            $category = Category::firstWhere('id', request('category'));
+        }
+        if (request('item')) {
+            $items = Item::all();
+        } else {
+            $items = Item::when(request('category'), function ($query) {
+                return $query->where('category_id', request('category'));
+            })->get();
+        }
+    
+        return view('user.item.index', ['items' => $items, 'category' => $category]);
+        
     }
 
     public function category(){

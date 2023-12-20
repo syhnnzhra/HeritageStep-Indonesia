@@ -19,14 +19,16 @@
             <ul class="uk-slider-items uk-child-width-1-5@s uk-grid">
                 @foreach ($kategori as $kat)
                 <li>
-                    <div class="uk-card uk-card-default">
-                        <div class="uk-card-media-top">
-                            <img src="https://source.unsplash.com/400x400/?product" width="1800" height="1200" alt="">
+                    <a href="{{ url('/category-products/' . $kat->id) }}">
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img src="https://source.unsplash.com/400x400/?product" width="1800" height="1200" alt="">
+                            </div>
+                            <div class="uk-card-footer w-hijau">
+                                <p class="uk-card-title kategori-nama">{{ $kat->nama }}</p>
+                            </div>
                         </div>
-                        <div class="uk-card-footer w-hijau">
-                            <p class="uk-card-title kategori-nama">{{ $kat->nama }}</p>
-                        </div>
-                    </div>
+                    </a>
                 </li>
                 @endforeach
             </ul>

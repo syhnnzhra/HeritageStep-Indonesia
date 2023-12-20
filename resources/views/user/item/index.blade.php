@@ -14,10 +14,12 @@
     </form>
 
     <div class="uk-child-width-1-4@m uk-grid-small uk-grid-match" uk-grid>
-        @foreach($items as $item)
+        @forelse($items as $item)
         <div>
             <div class="uk-card uk-card-default badge-color uk-card uk-card-hover">
-            <div class="uk-card-badge uk-label"><p>{{ $item->category->nama }}</p></div>
+            <div class="uk-card-badge uk-label">
+                <p>{{ $item->category->nama }}</p>
+            </div>
                 <div class="uk-card-media-top">
                     <img src="{{ $item->foto }}" width="1800" height="1200" alt="">
                 </div>
@@ -41,9 +43,7 @@
                                         <span>Rp {{ number_format($item->harga) }}</span>
                                         <div class="tambah-barang uk-flex uk-flex-middle">
                                             <button class="uk-icon-button uk-margin-small-right" uk-icon="icon: plus" onclick="tambahJumlah()"></button>
-                                            <!-- <form> -->
                                                 <input class="uk-input uk-form-blank uk-form-width-xsmall" type="text" id="jumlah-barang" name="qty" value="1" readonly>
-                                            <!-- </form> -->
                                             <button class="uk-icon-button" uk-icon="icon: minus" onclick="kurangJumlah()" disabled></button>
                                         </div>
                                         <!-- <a href="{{url('/cart',$item->id)}}" class="uk-button custom-green-button">Beli</a> -->
@@ -58,7 +58,9 @@
                 </div>
             </div>
         </div>
-        @endforeach
+        @empty
+        <p>No products available</p>
+        @endforelse
     </div>
 </div>
 

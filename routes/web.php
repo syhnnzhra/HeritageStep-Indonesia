@@ -73,18 +73,13 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/products', [HomeController::class, 'product']);
 Route::get('/category', [HomeController::class, 'category']);
+Route::get('/category-products/{category}', [HomeController::class, 'product']);
 
 Route::post('/logout', [LoginController::class, 'logout']);
 
 // Route::get('/', function () {
     //     return view('user.home');
     // });
-Route::get('/', [HomeController::class, 'index']);
-
-Route::get('/products', [HomeController::class, 'product']);
-Route::get('/category', [HomeController::class, 'category']);
-
-Route::post('/logout', [LoginController::class, 'logout']);
 
 //guest untuk yg tidak login
 Route::group(['middleware' => 'guest'], function () {

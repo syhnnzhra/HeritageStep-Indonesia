@@ -11,7 +11,7 @@ class Item extends Model
 
     public function Category()
     {
-        return $this->belongsTo('App\Models\Category', 'id','id');
+        return $this->belongsTo('App\Models\Category', 'category_id','id');
     }
     public function Item()
     {

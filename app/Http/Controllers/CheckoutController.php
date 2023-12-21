@@ -21,7 +21,22 @@ class CheckoutController extends Controller
             $orderedItems = collect();
         }
 
-        return view('user.checkout.checkout', compact('orderedItems', 'provinces'));
+        \Midtrans\Config::$serverKey = 'SB-Mid-server-aNMQxvtK9-21YXNCnMUKtshp';
+        \Midtrans\Config::$isProduction = false;
+        \Midtrans\Config::$isSanitized = true;
+        \Midtrans\Config::$is3ds = true;
+        
+        $params = [
+            'transaction_details' => [
+                'order_id' => rand(),
+                'gross_amount' => $order->subtotal,
+            ]
+        ];
+    
+        $snapToken = \Midtrans\Snap::getSnapToken((array)$params);
+        $params->snap_token = $snapToken;
+
+        return view('user.checkout.checkout', compact('orderedItems', 'provinces', 'params'));
     }
 
     public function getProvinces()
@@ -81,8 +96,6 @@ class CheckoutController extends Controller
     {
         $cek_order = Order::where('user_id', Auth::id())->where('status', 'pending')->first();
         $cart = OrderDetail::where('order_id', $cek_order->id)->get();
-        // return $request->city_id;
-        // dd($request->merge(['city_id' => $request->input('city')]));
         if ($cart) {
                 $order = Order::create([
                     'user_id' => $request->user_id,
@@ -101,14 +114,18 @@ class CheckoutController extends Controller
                     'subtotal' => $request->subtotal,
                     'no_resi' => '1111'
                     ]);
-                    // $this->_generatePaymentToken($order);
-                    // update status cart
-                    // foreach($cart as $c){
-                    //     $c->order_id=$order->order_id;
-                        // $c->status="Pending";
-                    //     $c->save();
-                    // }
-                    return 'ke payment';
+                    $this->_generatePaymentToken($order);
+
+                        // Update status cart
+                        foreach ($cart as $c) {
+                            $c->order_id = $order->order_id;
+                            $c->status = "Pending";
+                            $c->save();
+                        }
+
+                        
+
+                    return redirect('/my-order');
             } else {
                 return abort('404');//kalo ternyata ga ada shopping cart, maka akan menampilkan error halaman tidak ditemukan
         }

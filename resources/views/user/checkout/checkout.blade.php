@@ -130,7 +130,7 @@
                         
                         <div class="uk-flex uk-flex-between uk-margin-top">
                             <h1></h1>
-                            <button type="submit" class="uk-button custom-green-button">Proceed to Payment</button>
+                            <button type="submit" id="pay-button" class="uk-button custom-green-button">Proceed to Payment</button>
                         </div>
                     </form>
                 </div>
@@ -155,77 +155,27 @@
                         option.text = `${city.type} ${city.city_name}`;
                         citySelect.appendChild(option);
                     });
-                    const selectedCityId = "{{ old('city_id') }}";
-                    if (selectedCityId) {
-                        document.getElementById('city_id').value = selectedCityId;
-                    }
                 });
             // getCost();
         }
-
-        function getCost() {
-            var form = document.getElementById('rajaongkirForm');
-            var formData = new FormData(form);
-
-            fetch('/rajaongkir/getCost', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                },
-            })
-            .then(response => response.json())
-            .then(data => {
-                var resultDiv = document.getElementById('result');
-                resultDiv.innerHTML = JSON.stringify(data, null, 2);
-            })
-            .catch(error => console.error('Error:', error));
-        }
     </script>
     
-    <!-- <script>
-        jQuery(document).ready(function () {
-            $('#courier').on('change', function() {
-                var courier = jQuery(this).val();
-                var token = $("meta[name='csrf-token']").attr("content");
-                var origin = $('#origin').val();
-                var destination = $('#destination').val();
-                var weight = $('#weight').val();
-
-                if(courier) {
-                    jQuery.ajax({
-                        url: '/check-ongkir/',
-                        type: "post",
-                        dataType: "json",
-                        data: {
-                            _token: token,
-                            origin: origin,
-                            destination: destination,
-                            courier: courier,
-                            weight: weight,
-                        },
-                        success:function(response) {
-                            jQuery('#ongkir').empty();
-                            $.each(response[0]['costs'], function (key, value) {
-                                $('#ongkir').append('<option value="'+ value.cost[0].value +'">'+ response[0].code.toUpperCase()+' : <strong>'+value.service+'</strong> - Rp. '+value.cost[0].value+' ('+value.cost[0].etd+' hari)</option>')
-                            });
-                        }
-                    });
-                } else {
-                    $('#ongkir').empty();
-                }
+    <script type="text/javascript">
+        document.getElementById('pay-button').onclick = function(){
+            snap.pay('{{ $params->snap_token }}', {
+            onSuccess: function(result){
+                /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+            },
+            // Optional
+            onPending: function(result){
+                /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+            },
+            // Optional
+            onError: function(result){
+                /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+            }
             });
-
-            $('#ongkir').on('change', function() {
-                var ongkir = parseInt($('#ongkir').val()) || 0;
-                var subtotal = parseInt($('#subtotal').text().replace(/[^\d]/g, '')) || 0;
-                
-                var total = ongkir + subtotal;
-                $("#total").text('Rp ' + total.toLocaleString());
-                $("#inputan").val(total);
-                $("#postalfee").val(ongkir);
-            });
-        });
-    </script> -->
+        };
+    </script>
 
 @endsection

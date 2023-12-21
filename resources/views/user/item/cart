@@ -1,92 +1,63 @@
-@extends('user.layouts.layout')
+function getCost() {
+            var form = document.getElementById('rajaongkirForm');
+            var formData = new FormData(form);
 
-@section('container')
-<div class="uk-container uk-mb">
-    <h1 class="text-center">Carts</h1>
-    <div class="cart flex justify-center uk-child-width-1-2@s uk-grid-match">
-        <!-- Card Pertama -->
-        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-            <div class="uk-card-media-left uk-cover-container">
-                <img src="https://source.unsplash.com/400x400/?category-products" alt="Product Image" uk-cover>
-                <canvas width="600" height="400"></canvas>
-            </div>
-            <div>
-                <div class="uk-card-body">
-                    <h3 class="uk-card-title">Nama Barang</h3>
-                    <div class="uk-flex uk-flex-middle">
-                        <button class="uk-icon-button uk-margin-small-right" uk-icon="icon: plus" onclick="tambahJumlah()"></button>
-                        <form>
-                            <input class="uk-input uk-form-blank uk-form-width-xsmall" type="text" id="jumlah-barang" value="1" readonly>
-                        </form>
-                        <button class="uk-icon-button" uk-icon="icon: minus" onclick="kurangJumlah()" disabled></button>
-                    </div>
-                    <p class="uk-margin-remove-top">Harga: </p>
-                    <p class="uk-margin-remove-top">Rp xx.xxx</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card Kedua -->
-        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-            <div class="uk-card-media-left uk-cover-container">
-                <img src="https://source.unsplash.com/400x400/?category-products" alt="Product Image" uk-cover>
-                <canvas width="600" height="400"></canvas>
-            </div>
-            <div>
-                <div class="uk-card-body">
-                    <h3 class="uk-card-title">Nama Barang</h3>
-                    <div class="uk-flex uk-flex-middle">
-                        <button class="uk-icon-button uk-margin-small-right" uk-icon="icon: plus" onclick="tambahJumlah()"></button>
-                        <form>
-                            <input class="uk-input uk-form-blank uk-form-width-xsmall" type="text" id="jumlah-barang" value="1" readonly>
-                        </form>
-                        <button class="uk-icon-button" uk-icon="icon: minus" onclick="kurangJumlah()" disabled></button>
-                    </div>
-                    <p class="uk-margin-remove-top">Harga: </p>
-                    <p class="uk-margin-remove-top">Rp xx.xxx</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Keterangan Subtotal -->
-    <div class="uk-flex uk-flex-between uk-margin-top">
-        <h3>Subtotal</h3>
-        <p>Rp xx.xxx</p>
-    </div>
-
-    <!-- Tombol Checkout -->
-    <div class="uk-flex uk-flex-end uk-margin-top">
-        <button class="uk-button uk-button-primary" onclick="checkout()">Checkout</button>
-    </div>
-</div>
-
-<script>
-    var jumlahBarang = 1;
-
-    function tambahJumlah() {
-        jumlahBarang++;
-        updateJumlah();
-    }
-
-    function kurangJumlah() {
-        if (jumlahBarang > 1) {
-            jumlahBarang--;
-            updateJumlah();
+            fetch('/rajaongkir/getCost', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                var resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = JSON.stringify(data, null, 2);
+            })
+            .catch(error => console.error('Error:', error));
         }
-    }
 
-    function updateJumlah() {
-        document.getElementById('jumlah-barang').value = jumlahBarang;
+        <!-- <script>
+        jQuery(document).ready(function () {
+            $('#courier').on('change', function() {
+                var courier = jQuery(this).val();
+                var token = $("meta[name='csrf-token']").attr("content");
+                var origin = $('#origin').val();
+                var destination = $('#destination').val();
+                var weight = $('#weight').val();
 
-        // Aktifkan atau nonaktifkan tombol kurang berdasarkan jumlah barang
-        var tombolKurang = document.querySelector('.uk-icon-button[uk-icon="icon: minus"]');
-        tombolKurang.disabled = (jumlahBarang === 1);
-    }
+                if(courier) {
+                    jQuery.ajax({
+                        url: '/check-ongkir/',
+                        type: "post",
+                        dataType: "json",
+                        data: {
+                            _token: token,
+                            origin: origin,
+                            destination: destination,
+                            courier: courier,
+                            weight: weight,
+                        },
+                        success:function(response) {
+                            jQuery('#ongkir').empty();
+                            $.each(response[0]['costs'], function (key, value) {
+                                $('#ongkir').append('<option value="'+ value.cost[0].value +'">'+ response[0].code.toUpperCase()+' : <strong>'+value.service+'</strong> - Rp. '+value.cost[0].value+' ('+value.cost[0].etd+' hari)</option>')
+                            });
+                        }
+                    });
+                } else {
+                    $('#ongkir').empty();
+                }
+            });
 
-    function checkout() {
-        // Logika untuk proses checkout
-        alert('Proses checkout dilakukan.');
-    }
-</script>
-@endsection
+            $('#ongkir').on('change', function() {
+                var ongkir = parseInt($('#ongkir').val()) || 0;
+                var subtotal = parseInt($('#subtotal').text().replace(/[^\d]/g, '')) || 0;
+                
+                var total = ongkir + subtotal;
+                $("#total").text('Rp ' + total.toLocaleString());
+                $("#inputan").val(total);
+                $("#postalfee").val(ongkir);
+            });
+        });
+    </script> -->

@@ -11,6 +11,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\RajaOngkirController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\MidtransController;
 
 /*
 |--------------------------------------------------------------------------
@@ -114,6 +115,9 @@ Route::group(['middleware' => 'auth'], function () {
     // Route::get('/checkout', [CheckoutController::class, 'checkout']);
     Route::resource('/checkout', CheckoutController::class);
     Route::post('/rajaongkir/getCost', [CheckoutController::class, 'getCost']);
+
+    Route::get('/midtrans', [MidtransController::class, 'index']);
+    Route::post('/midtrans/notification', [MidtransController::class, 'notification']);
 });
 
 // auth login admin

@@ -21,6 +21,11 @@
         <select name="city" id="city">
             <option value="" disabled selected>Pilih Kota</option>
         </select>
+        
+        <label for="postal_code">Pilih Kode Pos:</label>
+        <select name="postal_code" id="postal_code">
+            <option value="" disabled selected>Pilih Kode Pos</option>
+        </select>
 
         <button type="submit">Hitung Ongkir</button>
     </form>
@@ -39,6 +44,23 @@
                         option.value = city.city_id;
                         option.text = city.city_name;
                         citySelect.appendChild(option);
+                    });
+                });
+        }
+
+        function getPostalCodes(cityId) {
+            // Menggunakan AJAX untuk mendapatkan data kode pos berdasarkan kota
+            fetch(`/get-postal-codes?city_id=${cityId}`)
+                .then(response => response.json())
+                .then(data => {
+                    const postalCodeSelect = document.getElementById('postal_code');
+                    postalCodeSelect.innerHTML = '<option value="" disabled selected>Pilih Kode Pos</option>';
+
+                    data.forEach(postalCode => {
+                        const option = document.createElement('option');
+                        option.value = postalCode.subdistrict_id;
+                        option.text = postalCode.subdistrict_name;
+                        postalCodeSelect.appendChild(option);
                     });
                 });
         }

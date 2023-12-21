@@ -50,4 +50,19 @@ class RajaOngkirController extends Controller
         return response()->json(['shipping_cost' => $calculatedCost]);
     }
 
+    public function getPostalCodes(Request $request)
+    {
+        $cityId = $request->input('city_id');
+
+        $client = new Client();
+
+        $response = $client->get("https://api.rajaongkir.com/starter/city", [
+            'headers' => [
+                'key' => 'b102635f70187c8e0d6f02db01cc5c94',
+            ],
+        ]);
+
+        return json_decode($response->getBody(), true)['rajaongkir']['results'];
+    }
+
 }

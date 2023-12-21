@@ -10,6 +10,7 @@ use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\RajaOngkirController;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,10 +78,6 @@ Route::get('/category-products/{category}', [HomeController::class, 'product']);
 
 Route::post('/logout', [LoginController::class, 'logout']);
 
-// Route::get('/', function () {
-    //     return view('user.home');
-    // });
-
 //guest untuk yg tidak login
 Route::group(['middleware' => 'guest'], function () {
     // login
@@ -105,15 +102,18 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/track', [HomeController::class, 'track']);
 
     Route::resource('/detail-product', HomeController::class);
-    // Route::post('/logout', [LoginController::class, 'logout']);
     Route::post('/order/item/{item_id}', [OrderController::class, 'orderItem'])->name('order.item');
 
+    // percobaan ongkir
     Route::get('/ongkir', [RajaOngkirController::class, 'index']);
     Route::get('/get-cities', [RajaOngkirController::class, 'getCities']);
-    Route::post('/calculate-shipping-cost', [RajaOngkirController::class, 'calculateShippingCost'])->name('calculateShippingCost');
-    
+    // Route::post('/calculate-shipping-cost', [RajaOngkirController::class, 'calculateShippingCost'])->name('calculateShippingCost');
     
     Route::get('/carts', [CartController::class, 'showCart']);
+    
+    // Route::get('/checkout', [CheckoutController::class, 'checkout']);
+    Route::resource('/checkout', CheckoutController::class);
+    Route::post('/rajaongkir/getCost', [CheckoutController::class, 'getCost']);
 });
 
 // auth login admin

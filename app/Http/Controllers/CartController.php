@@ -11,12 +11,13 @@ class CartController extends Controller
 {
     public function showCart()
     {
-        $order = Order::where('user_id', Auth::id())
-            ->where('status', 'pending')
-            ->first();
+        $order = Order::where('user_id', Auth::id())->where('status', 'pending')->first();
 
-        $orderedItems = OrderDetail::where('order_id', $order->id)->get();
-
+        if ($order) {
+            $orderedItems = OrderDetail::where('order_id', $order->id)->get();
+        } else {
+            $orderedItems = collect();
+        }
         return view('user.item.cart', compact('orderedItems'));
     }
 

@@ -17,6 +17,7 @@
 <!-- </div> -->
 </div>
 <div class="uk-overflow-auto">
+    <a href="/produk/create"> Tambah Data</a>
     <table class="uk-table uk-table-hover uk-table-middle uk-table-divider my-0 mx-5">
         <thead>
             <tr>
@@ -30,50 +31,19 @@
             </tr>
         </thead>
         <tbody>
+            @foreach($items as $produk)
             <tr>
                 <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td>
-                <td><div class="image-wrapper"><img class="image" src="css/assets/pro1.png"/></div></td>
+                <td><div class="image-wrapper"><img class="image" src="{{ $produk->foto }}"/></div></td>
                 <td class="uk-table-link">
-                    <a class="uk-link-reset" href="">sepatu</a>
+                    <a class="uk-link-reset" href="">{{ $produk->nama }}</a>
                 </td>
-                <td class="uk-text-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</td>
-                <td class="uk-text-nowrap">2363762</td>
-                <td class="uk-text-nowrap">300.000</td>
-                <td class="uk-text-nowrap">20</td>
+                <td class="uk-text-truncate">{{ $produk->keterangan }}</td>
+                <td class="uk-text-nowrap">{{ $produk->id }}</td>
+                <td class="uk-text-nowrap">Rp {{ number_format($produk->harga) }}</td>
+                <td class="uk-text-nowrap">{{ $produk->stock }}</td>
             </tr>
-            <tr>
-                <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td>
-                <td><div class="image-wrapper"><img class="image" src="css/assets/pro1.png"/></div></td>
-                <td class="uk-table-link">
-                    <a class="uk-link-reset" href="">sepatu</a>
-                </td>
-                <td class="uk-text-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</td>
-                <td class="uk-text-nowrap">2363762</td>
-                <td class="uk-text-nowrap">300.000</td>
-                <td class="uk-text-nowrap">20</td>
-            </tr>
-            <tr>
-                <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td>
-                <td><div class="image-wrapper"><img class="image" src="css/assets/pro1.png"/></div></td>
-                <td class="uk-table-link">
-                    <a class="uk-link-reset" href="">sepatu</a>
-                </td>
-                <td class="uk-text-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</td>
-                <td class="uk-text-nowrap">2363762</td>
-                <td class="uk-text-nowrap">300.000</td>
-                <td class="uk-text-nowrap">20</td>
-            </tr>
-            <tr>
-                <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td>
-                <td><div class="image-wrapper"><img class="image" src="css/assets/pro1.png"/></div></td>
-                <td class="uk-table-link">
-                    <a class="uk-link-reset" href="">sepatu</a>
-                </td>
-                <td class="uk-text-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</td>
-                <td class="uk-text-nowrap">2363762</td>
-                <td class="uk-text-nowrap">300.000</td>
-                <td class="uk-text-nowrap">20</td>
-            </tr>
+            @endforeach
         </tbody>
     </table>
 </div>

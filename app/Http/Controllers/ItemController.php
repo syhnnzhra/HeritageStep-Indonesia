@@ -12,7 +12,9 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.produk.index', [
+            'items' => Item::all()
+        ]);
     }
 
     /**
@@ -20,7 +22,7 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.produk.create');
     }
 
     /**

@@ -39,33 +39,17 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($odetail as $product)
             <tr>
                 <!-- <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td> -->
-                <td><div class="image-wrapper"><img class="image" src="css/assets/rectangle-39.png" width="80" height="80"/></div></td>
+                <td><div class="image-wrapper"><img class="image" src="{{ $product->item->foto }}" width="80" height="80"/></div></td>
                 <td class="uk-table-link">
-                    <a class="uk-link-reset" href="">Baju</a>
+                    <a class="uk-link-reset" href="">{{ $product->item->nama }}</a>
                 </td>
-                <td class="uk-text-truncate">200.000</td>
-                <td class="uk-text-nowrap">Diproses</td>
+                <td class="uk-text-truncate">Rp {{ number_format($product->item->harga) }}</td>
+                <td class="uk-text-nowrap">{{ $product->status }}</td>
             </tr>
-            <tr>
-                <!-- <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td> -->
-                <td><div class="image-wrapper"><img class="image" src="css/assets/rectangle-39.png" width="80" height="80"/></div></td>
-                <td class="uk-table-link">
-                    <a class="uk-link-reset" href="">Baju</a>
-                </td>
-                <td class="uk-text-truncate">200.000</td>
-                <td class="uk-text-nowrap">Diproses</td>
-            </tr>
-            <tr>
-                <!-- <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td> -->
-                <td><div class="uk-preserve-width uk-border-circle"><img class="image" src="css/assets/rectangle-39.png" width="80" height="80"/></div></td>
-                <td class="uk-table-link">
-                    <a class="uk-link-reset" href="">Sepatu</a>
-                </td>
-                <td class="uk-text-truncate">200.000</td>
-                <td class="uk-text-nowrap">Selesai</td>
-            </tr>
+            @endforeach
         </tbody>
     </table>
 <!-- -------------------------------------------------------------------------------->

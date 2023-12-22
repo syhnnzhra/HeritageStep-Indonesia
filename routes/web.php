@@ -12,6 +12,9 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\RajaOngkirController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\MidtransController;
+use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\PesananController;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -125,6 +128,9 @@ Route::group(['middleware' => 'isAdmin'], function () {
     Route::resource('/dashboard', DashboardController::class);
     Route::resource('/order', OrderController::class);
     Route::resource('/customer', CustomerController::class);
+    Route::resource('/pesanan', PesananController::class);
+    Route::resource('/laporan', LaporanController::class);
+    Route::resource('/produk', ItemController::class);
     
     // Route::post('/logout', [LoginController::class, 'logout']);
 });

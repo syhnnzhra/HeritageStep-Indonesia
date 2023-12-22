@@ -3,18 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\OrderDetail;
 
-class DashboardController extends Controller
+class LaporanController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.dashboard.index', [
-            'odetail' => OrderDetail::all()
-        ]);
+        //
     }
 
     /**

@@ -50,60 +50,6 @@
             <td>COD</td>
             <td>Diproses</td>
         </tr>
-        <tr>
-            <td>THIA</td>
-            <td>HT-11111</td>
-            <td>6498629642817</td>
-            <td>12-12-2023</td>
-            <td>150.000</td>
-            <td>COD</td>
-            <td>Diproses</td>
-        </tr>
-        <tr>
-            <td>THIA</td>
-            <td>HT-11111</td>
-            <td>6498629642817</td>
-            <td>12-12-2023</td>
-            <td>150.000</td>
-            <td>COD</td>
-            <td>selesai</td>
-        </tr>
-        <tr>
-            <td>THIA</td>
-            <td>HT-11111</td>
-            <td>6498629642817</td>
-            <td>12-12-2023</td>
-            <td>150.000</td>
-            <td>COD</td>
-            <td>selesai</td>
-        </tr>
-        <tr>
-            <td>THIA</td>
-            <td>HT-11111</td>
-            <td>6498629642817</td>
-            <td>12-12-2023</td>
-            <td>150.000</td>
-            <td>COD</td>
-            <td>selesai</td>
-        </tr>
-        <tr>
-            <td>THIA</td>
-            <td>HT-11111</td>
-            <td>6498629642817</td>
-            <td>12-12-2023</td>
-            <td>150.000</td>
-            <td>COD</td>
-            <td>Diproses</td>
-        </tr>
-        <tr>
-            <td>THIA</td>
-            <td>HT-11111</td>
-            <td>6498629642817</td>
-            <td>12-12-2023</td>
-            <td>150.000</td>
-            <td>COD</td>
-            <td>Diproses</td>
-        </tr>
     </tbody>
 </table>    
 

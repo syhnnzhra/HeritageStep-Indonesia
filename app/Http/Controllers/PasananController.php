@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\OrderDetail;
+use App\Models\Order;
 
-class DashboardController extends Controller
+class PasananController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.dashboard.index', [
-            'odetail' => OrderDetail::all()
+        return view('admin.pesanan.index', [
+            'order' => Order::all()
         ]);
     }
 

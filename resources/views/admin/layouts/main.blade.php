@@ -9,6 +9,43 @@
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.11/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.11/dist/js/uikit-icons.min.js"></script>
 <title>HERITAGE_STEP Dashboard</title>
+  <style>
+  .custom-warna {
+    background-color:#39A7FF;
+  }
+  .flex {
+    background-color:#EEF5FF;
+  }
+  .uk-search{
+    background-color:#39A7FF;
+    font-color:#00000;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  .uk-table-shrink{
+    background-color:#39A7FF; //biru
+    font-color:#00000;
+  }
+  .uk-width-small{
+    background-color:#39A7FF;
+  }
+  .uk-table-expand{
+    background-color:#39A7FF;
+  }
+  .uk-icon-link {
+    background-color:#CD8D7A;
+    font-color:#00000;
+    margin-right: 14px;
+  }
+  /* .uk-text-nowrap{
+    background-color:#39A7FF;
+  } */
+
+  .uk-card-hover {
+    background-color:#39A7FF;
+  }
+  </style>
 </head>
 
 <body class="flex h-screen bg-gray-100">
@@ -16,74 +53,28 @@
     <h2 class="text-2xl font-bold mb-4">HERITAGE_STEP</h2>
     <ul>
       <li class="mb-2">
-        <a href="/cekdash" class="hover:text-gray-300" style="color:black; background-color:#EEF5FF;" >dashboard</a>
+        <a href="/dashboard" style="font-color:white;" >dashboard</a>
       </li>
       <li class="mb-2">
-        <a href="/pesanan" class="hover:text-gray-300" style="color:black; background-color:#EEF5FF;">Mengelola Pesanan</a>
+        <a href="/order" style="font-color:white;">Mengelola Pesanan</a>
       </li>
       <li class="mb-2">
-        <a href="/pro" class="hover:text-gray-300" style="color:black; background-color:#EEF5FF;">Mengelola Produk</a>
+        <a href="/produk" style="font-color:white;">Mengelola Produk</a>
       </li>
       <li class="mb-2">
-        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EEF5FF;" >Memproses Pembayaran</a>
+        <a href="/customer" style="font-color:white;" >Daftar Pengguna</a>
       </li>
       <li class="mb-2">
-        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EEF5FF;" >Daftar Pengguna</a>
+        <a href="/laporan" style="font-color:white;"  >Laporan</a>
       </li>
       <li class="mb-2">
-        <a href="#" class="hover:text-gray-300" style="color:black; background-color:#EEF5FF;"  >Laporan</a>
+        <form action="/logout" method="post">
+            @csrf
+            <button type="submit">Logout</button>
+        </form>
       </li>
     </ul>
   </div>
-<style>
-  //dashboard
-.uk-card {
-  background-color:#39A7FF;
-}
-.custom-warna {
-  background-color:#39A7FF;
-}
-.flex {
-  background-color:#EEF5FF;
-}
-.uk-search{
-  background-color:#39A7FF;
-  font-color:#00000;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-}
-.uk-table-shrink{
-  background-color:#39A7FF; //biru
-  font-color:#00000;
-}
-.uk-width-small{
-  background-color:#39A7FF;
-}
-.uk-table-expand{
-  background-color:#39A7FF;
-}
-.uk-icon-link {
-  background-color:#CD8D7A;
-  font-color:#00000;
-  margin-right: 14px;
-}
-/* .uk-text-nowrap{
-  background-color:#39A7FF;
-} */
-
-
-//pesanan
-.uk-table-hover{
-  background-color:#39A7FF;
-}
-.uk-card-hover {
-  background-color:#39A7FF;
-}
-//produk
-//cust
-
-</style>
 
   <div class="container" >
     @yield('container')

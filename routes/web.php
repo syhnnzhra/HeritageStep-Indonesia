@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CreateController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OrderController;
@@ -15,6 +16,7 @@ use App\Http\Controllers\MidtransController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\CreateControllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -131,6 +133,7 @@ Route::group(['middleware' => 'isAdmin'], function () {
     Route::resource('/pesanan', PesananController::class);
     Route::resource('/laporan', LaporanController::class);
     Route::resource('/produk', ItemController::class);
+
     
     // Route::post('/logout', [LoginController::class, 'logout']);
 });

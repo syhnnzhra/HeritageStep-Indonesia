@@ -3,9 +3,11 @@
 <div class="uk-card uk-card-default uk-card-body uk-width-1-1@m produk mb-10">
     <h3 class="uk-card-title ">Tambah Produk</h3>
 </div>
-<div class="uk-container">
+
+
+<div class="uk-container col-lg-8">
     <div class="uk-card uk-card-default uk-card-body uk-width-1-1@m">
-        <form class="uk-form-stacked" method="post" action="/produk/store">
+        <form class="uk-form-stacked" method="post" action="/admin/produk/create">
             @csrf
             <div class="uk-margin">
                 <label class="uk-form-label" for="form-stacked-text">Nama Produk</label>
@@ -50,6 +52,9 @@
             </div>
             <div class="uk-margin" uk-margin>
                 <button class="uk-button uk-button-default" type="submit">Kirim</button>
+                <p uk-margin>
+    <button class="uk-button uk-button-default demo" type="button" onclick="UIkit.notification({message: 'Success message…', status: 'success'})">Data Berhasil Ditambahkan!</button>
+            </p>   
             </div>
         </form>
     </div>

@@ -22,7 +22,7 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.produk.create');
     }
 
     /**
@@ -30,7 +30,7 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request;
     }
 
     /**

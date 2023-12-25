@@ -50,7 +50,7 @@ Route::get('/pro', function () {
     return view('admin.produk.index');
 });
 Route::get('/edit', function () {
-    return view('admin.edit.index');
+    return view('admin.produk.edit');
     // public function insertdata(request $request) {
     //     employee::create($request->all());
     //     return redirect()->route('pro')
@@ -60,7 +60,7 @@ Route::get('/hapus', function () {
     return view('admin.hapus_produk.index');
 });
 Route::get('/add', function () {
-    return view('admin.tambah_produk.index');
+    return view('admin.produk.create');
     
 });
 

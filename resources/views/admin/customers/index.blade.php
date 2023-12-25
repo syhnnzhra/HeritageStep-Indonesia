@@ -1,10 +1,6 @@
 @extends('admin.layouts.main')
 @section('container')
 
-    </div>
-<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m cust">
-    <h3 class="uk-card-title">Data Pelanggan</h3>
-</div>
 <!-- tabel 1 -->
 <!-- <div class="uk-card uk-card-default uk-width-1-3@m my-10 mx-5 ">
 <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td>

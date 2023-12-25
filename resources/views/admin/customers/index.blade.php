@@ -44,7 +44,18 @@
 </div> -->
 <!-- tabel 2 -->
 
-<div class="uk-overflow-auto">
+<nav class="uk-navbar-container mx-5 " uk-navbar >
+
+
+        <div class="uk-navbar-item ">
+            <form class="uk-search uk-search-navbar">
+                <span uk-search-icon></span>
+                <input class="uk-search-input" type="search" placeholder="Search" aria-label="Search">
+            </form>
+        </div>
+</nav>
+
+<div class="uk-overflow-auto mx-5">
     <table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
         <thead>
             <tr>

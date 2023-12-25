@@ -24,8 +24,18 @@
         </div>
     </div>
  
-    
 </div>
+
+<nav class="uk-navbar-container mx-5 " uk-navbar >
+
+
+        <div class="uk-navbar-item ">
+            <form class="uk-search uk-search-navbar">
+                <span uk-search-icon></span>
+                <input class="uk-search-input" type="search" placeholder="Search" aria-label="Search">
+            </form>
+        </div>
+</nav>
 
 <table class="uk-table uk-table-hover uk-table-divider my-10 mx-5 ">
     <caption style="color:black">Laporan Pengiriman</caption>

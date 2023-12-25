@@ -11,7 +11,7 @@
 <title>HERITAGE_STEP Dashboard</title>
   <style>
   .custom-warna {
-    background-color:#39A7FF;
+    background-color:#0AEE13;
   }
   .flex {
     background-color:#EEF5FF;
@@ -24,17 +24,17 @@
     display: flex;
   }
   .uk-table-shrink{
-    background-color:#39A7FF; //biru
+    background-color: #C7FFC9; //biru
     font-color:#00000;
   }
   .uk-width-small{
-    background-color:#39A7FF;
+    background-color:#C7FFC9;
   }
   .uk-table-expand{
-    background-color:#39A7FF;
+    background-color:  #C7FFC9;
   }
   .uk-icon-link {
-    background-color:#CD8D7A;
+    background-color: #C7FFC9;
     font-color:#00000;
     margin-right: 14px;
   }
@@ -43,14 +43,30 @@
   } */
 
   .uk-card-hover {
+    background-color: #C7FFC9;
+  }
+
+  .aksi {
     background-color:#39A7FF;
+  }
+
+  .aksi {
+    background-color: #C7FFC9;
+  }
+
+  .data {
+    font-color:#00000;
   }
   </style>
 </head>
 
-<body class="flex h-screen bg-gray-100">
+<body class="flex h-screen bg-gray-100" >
   <div class="bg-green-800 text-white w-64 p-4 custom-warna ">
-    <h2 class="text-2xl font-bold mb-4">HERITAGE_STEP</h2>
+  <div class="uk-navbar-left text-2xl font-bold mb-2">
+       <img src="css/assets/image-1.png" alt="" width="100px">
+   </div>
+
+    <!-- <h2 class="text-2xl font-bold mb-4">HERITAGE_STEP</h2> -->
     <ul>
       <li class="mb-2">
         <a href="/dashboard" style="font-color:white;" >dashboard</a>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Item;
+use App\Models\Category;
+use File;
 
 class ItemController extends Controller
 {
@@ -22,7 +24,9 @@ class ItemController extends Controller
      */
     public function create()
     {
-        return view('admin.produk.create');
+        return view('admin.produk.create', [
+            'category' => Category::all()
+        ]);
     }
 
     /**
@@ -30,7 +34,21 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $item= new Item;
+        $item->nama=$request->nama;
+        $item->category_id=$request->category_id;
+        $item->stok=$request->stok;
+        $item->harga=$request->harga;
+        $item->keterangan=$request->keterangan;
+
+        $foto =$request->foto;
+        $imageName = time().'.'.
+        $foto->extension();
+        $request->foto->move(public_path().'/gambar', $imageName);
+        $item->foto = $imageName;
+        $item->save();
+
+        return redirect('/produk');
     }
 
     /**
@@ -46,7 +64,9 @@ class ItemController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $category = Category::all();
+        $item = Item::FindOrFail($id);
+        return view('admin.produk.edit', compact('item', 'category'));
     }
 
     /**
@@ -54,7 +74,31 @@ class ItemController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $foto =$request->foto;
+        if($foto != NULL){
+            $item=Item::FindOrFail($id);
+            File::delete('gambar/'.$item->image);
+            $imageName = time().'.'.$foto->extension();
+            $request->foto->move(public_path('gambar/'), $imageName);
+            $item->nama=$request->nama;
+            $item->category_id=$request->category_id;
+            $item->stok=$request->stok;
+            $item->harga=$request->harga;
+            $item->keterangan=$request->keterangan;
+            $item->foto=$imageName;
+            $item->save();
+        }
+        else{
+            $item =Item::FindOrFail($id);
+            $item->nama=$request->nama;
+            $item->category_id=$request->category_id;
+            $item->stok=$request->stok;
+            $item->harga=$request->harga;
+            $item->keterangan=$request->keterangan;
+            $item->foto=$request->foto;
+            $item->save();
+        }
+        return redirect('/produk');
     }
 
     /**
@@ -62,6 +106,9 @@ class ItemController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $item = Item::FindOrFail($id);
+        $item->delete();
+
+        return redirect('/produk');
     }
 }

@@ -15,7 +15,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('admin.pesanan.index');
+        return view('admin.pesanan.index', [
+            'order' => Order::all()
+        ]);
     }
 
     /**

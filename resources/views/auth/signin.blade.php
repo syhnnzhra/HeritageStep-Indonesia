@@ -71,7 +71,7 @@
 					
 					<div class="text-right p-t-8 p-b-31">
                         Doesn't have an account? 
-						<a href="#">
+						<a href="/register">
 							Sign Up
 						</a>
 					</div>
@@ -92,9 +92,6 @@
 					</div>
 
 					<div class="flex-c-m">
-						<a href="#" class="login100-social-item bg1">
-							<i class="fa fa-facebook"></i>
-						</a>
 						<a href="/auth/google" class="login100-social-item bg3">
 							<i class="fa fa-google"></i>
 						</a>

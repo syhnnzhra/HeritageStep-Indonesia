@@ -63,91 +63,22 @@
                 <th class="uk-table-shrink"></th>
                 <th class="uk-width-small">Nama</th>
                 <th class="uk-width-small">Email</th>
-                <th class="uk-width-small">Alamat</th>
-                <th class="uk-table-shrink uk-text-nowrap">No Handphone</th>
+                <!-- <th class="uk-width-small">Alamat</th>
+                <th class="uk-table-shrink uk-text-nowrap">No Handphone</th> -->
             </tr>
         </thead>
         <tbody>
+            @foreach($customer as $c)
             <tr>
-                <!-- <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td> -->
-                <td><img class="uk-preserve-width uk-border-circle" src="images/avatar.jpg" width="40" height="40" alt=""></td>
+                <td><img class="uk-preserve-width uk-border-circle" src="img/user.png" width="40" height="40" alt=""></td>
                 <td class="uk-table-link">
-                    <a class="uk-link-reset" href="">tia</a>
+                    <a class="uk-link-reset" href="">{{ $c->name }}</a>
                 </td>
-                <td class="uk-text-truncate">Fathiamaulida145@gmail.com</td>
-                <td class="uk-text-truncate">Bandung</td>
-                <td class="uk-text-nowrap">081234567890</td>
+                <td class="uk-text-truncate">{{ $c->email }}</td>
+                <!-- <td class="uk-text-truncate">Bandung</td>
+                <td class="uk-text-nowrap">081234567890</td> -->
             </tr>
-            <tr>
-                <!-- <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td> -->
-                <td><img class="uk-preserve-width uk-border-circle" src="images/avatar.jpg" width="40" height="40" alt=""></td>
-                <td class="uk-table-link">
-                    <a class="uk-link-reset" href="">tia</a>
-                </td>
-                <td class="uk-text-truncate">Fathiamaulida145@gmail.com</td>
-                <td class="uk-text-truncate">Bandung</td>
-                <td class="uk-text-nowrap">081234567890</td>
-            </tr>
-            <tr>
-                <!-- <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td> -->
-                <td><img class="uk-preserve-width uk-border-circle" src="images/avatar.jpg" width="40" height="40" alt=""></td>
-                <td class="uk-table-link">
-                    <a class="uk-link-reset" href="">tia</a>
-                </td>
-                <td class="uk-text-truncate">Fathiamaulida145@gmail.com</td>
-                <td class="uk-text-truncate">Bandung</td>
-                <td class="uk-text-nowrap">081234567890</td>
-            </tr>
-            <tr>
-                <!-- <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td> -->
-                <td><img class="uk-preserve-width uk-border-circle" src="images/avatar.jpg" width="40" height="40" alt=""></td>
-                <td class="uk-table-link">
-                    <a class="uk-link-reset" href="">tia</a>
-                </td>
-                <td class="uk-text-truncate">Fathiamaulida145@gmail.com</td>
-                <td class="uk-text-truncate">Bandung</td>
-                <td class="uk-text-nowrap">081234567890</td>
-            </tr>
-            <tr>
-                <!-- <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td> -->
-                <td><img class="uk-preserve-width uk-border-circle" src="images/avatar.jpg" width="40" height="40" alt=""></td>
-                <td class="uk-table-link">
-                    <a class="uk-link-reset" href="">tia</a>
-                </td>
-                <td class="uk-text-truncate">Fathiamaulida145@gmail.com</td>
-                <td class="uk-text-truncate">Bandung</td>
-                <td class="uk-text-nowrap">081234567890</td>
-            </tr>
-            <tr>
-                <!-- <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td> -->
-                <td><img class="uk-preserve-width uk-border-circle" src="images/avatar.jpg" width="40" height="40" alt=""></td>
-                <td class="uk-table-link">
-                    <a class="uk-link-reset" href="">tia</a>
-                </td>
-                <td class="uk-text-truncate">Fathiamaulida145@gmail.com</td>
-                <td class="uk-text-truncate">Bandung</td>
-                <td class="uk-text-nowrap">081234567890</td>
-            </tr>
-            <tr>
-                <!-- <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td> -->
-                <td><img class="uk-preserve-width uk-border-circle" src="images/avatar.jpg" width="40" height="40" alt=""></td>
-                <td class="uk-table-link">
-                    <a class="uk-link-reset" href="">tia</a>
-                </td>
-                <td class="uk-text-truncate">Fathiamaulida145@gmail.com</td>
-                <td class="uk-text-truncate">Bandung</td>
-                <td class="uk-text-nowrap">081234567890</td>
-            </tr>
-            <tr>
-                <!-- <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td> -->
-                <td><img class="uk-preserve-width uk-border-circle" src="images/avatar.jpg" width="40" height="40" alt=""></td>
-                <td class="uk-table-link">
-                    <a class="uk-link-reset" href="">tia</a>
-                </td>
-                <td class="uk-text-truncate">Fathiamaulida145@gmail.com</td>
-                <td class="uk-text-truncate">Bandung</td>
-                <td class="uk-text-nowrap">081234567890</td>
-            </tr>
+            @endforeach
         </tbody>
     </table>
 </div>

@@ -65,9 +65,6 @@
         <a href="/customer" style="font-color:white;" >Daftar Pengguna</a>
       </li>
       <li class="mb-2">
-        <a href="/laporan" style="font-color:white;"  >Laporan</a>
-      </li>
-      <li class="mb-2">
         <form action="/logout" method="post">
             @csrf
             <button type="submit">Logout</button>

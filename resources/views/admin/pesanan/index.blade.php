@@ -37,6 +37,8 @@
         </div>
 </nav>
 
+<a href="/laporan">Cetak Laporan</a>
+
 <table class="uk-table uk-table-hover uk-table-divider my-10 mx-5 ">
     <caption style="color:black">Laporan Pengiriman</caption>
     <thead>
@@ -51,15 +53,17 @@
         </tr>
     </thead>
     <tbody style="color:black">
+    @foreach($order as $o)
         <tr>
-            <td>THIA</td>
-            <td>HT-11111</td>
-            <td>6498629642817</td>
-            <td>12-12-2023</td>
-            <td>150.000</td>
-            <td>COD</td>
-            <td>Diproses</td>
+            <td>{{ $o->first_name }} {{ $o->last_name }}</td>
+            <td>{{ $o->id }}</td>
+            <td>{{ $o->no_resi }}</td>
+            <td>{{ $o->updated_at }}</td>
+            <td>Rp {{ number_format($o->subtotal) }}</td>
+            <td>{{ $o->payment_status }}</td>
+            <td>{{ $o->status }}</td>
         </tr>
+    @endforeach
     </tbody>
 </table>    
 

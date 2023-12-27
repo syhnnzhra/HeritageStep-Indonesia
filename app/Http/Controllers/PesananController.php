@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Order;
+use PDF;
 
-class PasananController extends Controller
+class PesananController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -63,5 +64,13 @@ class PasananController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function generatePDF()
+    {
+        $data = ['title' => 'Laporan Pesanan', 'order' => Order::all()];
+        $pdf = PDF::loadView('admin.pesanan.laporan', $data);
+
+        return $pdf->download('Laporan-Order.pdf');
     }
 }

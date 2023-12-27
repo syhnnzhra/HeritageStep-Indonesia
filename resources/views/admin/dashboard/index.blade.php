@@ -20,19 +20,19 @@
     <div>
         <div class="uk-card uk-card-hover uk-card-body my-10 mx-5">
             <h3 class="uk-card-title" style="color:black;">Total Pendapatan</h3>
-            <p style="color:black;">10.000.000</p>
+            <p style="color:black;">Rp {{ number_format($total) }}</p>
         </div>
     </div>
     <div>
     <div class="uk-card uk-card-hover uk-card-body my-10 mx-5">
             <h3 class="uk-card-title" style="color:black;">Total Produk</h3>
-            <p style="color:black;">100</p>
+            <p style="color:black;">{{ $totalProduk }}</p>
         </div>
     </div>
     <div>
     <div class="uk-card uk-card-hover uk-card-body my-10 mx-5">
-            <h3 class="uk-card-title" style="color:black;">total keuntungan</h3>
-            <p style="color:black;">15.000.000</p>
+            <h3 class="uk-card-title" style="color:black;">total Order</h3>
+            <p style="color:black;">{{ $totalorder }}</p>
         </div>
         </div>
     </div>

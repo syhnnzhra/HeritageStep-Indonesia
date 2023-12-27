@@ -8,19 +8,19 @@
     <div>
         <div class="uk-card uk-card-default uk-card-hover uk-card-body my-10 mx-5">
             <h3 class="uk-card-title text-center">DIPROSES</h3>
-            <p class="text-center">100</p>
+            <p class="text-center">{{ $pending }}</p>
         </div>
     </div>
     <div>
         <div class="uk-card uk-card-default uk-card-hover uk-card-body my-10 ">
             <h3 class="uk-card-title text-center">DIKIRIM</h3>
-            <p class="text-center">100</p>
+            <p class="text-center">{{ $sending }}</p>
         </div>
     </div>
     <div>
         <div class="uk-card uk-card-default uk-card-hover uk-card-body my-10 mr-5">
             <h3 class="uk-card-title text-center">SELESAI</h3>
-            <p class="text-center">100</p>
+            <p class="text-center">{{ $done }}</p>
         </div>
     </div>
  

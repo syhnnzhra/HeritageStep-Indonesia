@@ -129,7 +129,7 @@ Route::group(['middleware' => 'isAdmin'], function () {
     Route::resource('/order', OrderController::class);
     Route::resource('/customer', CustomerController::class);
     Route::resource('/pesanan', PesananController::class);
-    Route::resource('/laporan', LaporanController::class);
+    Route::get('/laporan', [PesananController::class, 'generatePDF']);
     Route::resource('/produk', ItemController::class);
     
     // Route::post('/logout', [LoginController::class, 'logout']);

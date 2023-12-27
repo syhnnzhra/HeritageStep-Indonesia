@@ -15,8 +15,14 @@ class OrderController extends Controller
      */
     public function index()
     {
+        $pending = Order::where('status', 'pending')->count();
+        $sending = Order::where('status', 'sending')->count();
+        $done = Order::where('status', 'done')->count();
         return view('admin.pesanan.index', [
-            'order' => Order::all()
+            'order' => Order::all(),
+            'pending' => $pending,
+            'sending' => $sending,
+            'done' => $done
         ]);
     }
 

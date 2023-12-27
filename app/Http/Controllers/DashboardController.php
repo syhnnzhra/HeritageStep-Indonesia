@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\OrderDetail;
+use App\Models\Order;
+use App\Models\Item;
 
 class DashboardController extends Controller
 {
@@ -12,8 +14,14 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        $totalPendapatan = Order::where('payment_status', 'PAID')->sum('subtotal');
+        $totalProduk = Item::all()->count();
+        $totalOrderPaid = Order::where('payment_status', 'PAID')->count();
         return view('admin.dashboard.index', [
-            'odetail' => OrderDetail::all()
+            'odetail' => OrderDetail::all(),
+            'total' => $totalPendapatan,
+            'totalorder' => $totalOrderPaid,
+            'totalProduk' => $totalProduk
         ]);
     }
 

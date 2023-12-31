@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Models\Category;
 use File;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ItemController extends Controller
 {
@@ -44,10 +45,11 @@ class ItemController extends Controller
         $foto =$request->foto;
         $imageName = time().'.'.
         $foto->extension();
-        $request->foto->move(public_path().'/gambar', $imageName);
+        $request->foto->move(public_path().'/img', $imageName);
         $item->foto = $imageName;
         $item->save();
 
+        Alert::success('Product ditambahkan!', 'Produk Berhasil ditambahkan!');
         return redirect('/produk');
     }
 
@@ -98,6 +100,8 @@ class ItemController extends Controller
             $item->foto=$request->foto;
             $item->save();
         }
+
+        Alert::success('Product diubah!', 'Produk Berhasil diubah!');
         return redirect('/produk');
     }
 
@@ -108,7 +112,8 @@ class ItemController extends Controller
     {
         $item = Item::FindOrFail($id);
         $item->delete();
-
+        
+        Alert::success('Product dihapus!', 'Produk Berhasil dihapus!');
         return redirect('/produk');
     }
 }

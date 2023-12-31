@@ -6,6 +6,10 @@
     <title>HeritageStep</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.17.11/dist/css/uikit.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    @livewireStyles
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
     <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}"></script>
     <style>
         .kontainer{
@@ -94,7 +98,7 @@
 
                 <div class="uk-navbar-center">
                     <ul class="uk-navbar-nav">
-                        <li class="uk-active"><a href="/">Home</a></li>
+                        <li class=""><a href="/">Home</a></li>
                         <li><a href="/category">Category</a></li>
                         <li><a href="/products">Product</a></li>
                         <li><a href="/carts"><img src="flaticon/bag.png" alt="" width="20px"></a></li>
@@ -161,6 +165,8 @@
             </footer>
         </div>
     </div>
+
+    @livewireScripts
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.11/dist/js/uikit.min.js"></script>

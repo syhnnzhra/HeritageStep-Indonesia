@@ -19,13 +19,14 @@
                     <div>
                         <div class="uk-card-body">
                             <h3 class="uk-card-title">{{ $cart->item->nama }}</h3>
-                            <div class="uk-flex uk-flex-middle">
+                            <!-- <div class="uk-flex uk-flex-middle">
                                 <button class="uk-icon-button uk-margin-small-right" uk-icon="icon: plus" onclick="tambahJumlah()"></button>
                                 <form>
                                     <input class="uk-input uk-form-blank uk-form-width-xsmall" type="text" id="jumlah-barang" value="{{ $cart->qty }}" readonly>
                                 </form>
                                 <button class="uk-icon-button" uk-icon="icon: minus" onclick="kurangJumlah()" disabled></button>
-                            </div>
+                            </div> -->
+                            <p class="uk-margin-remove-top">Qty: {{ $cart->qty }} </p>
                             <p class="uk-margin-remove-top">Harga: </p>
                             <p class="uk-margin-remove-top">Rp {{ number_format($cart->item->harga) }}</p>
                             
@@ -58,7 +59,7 @@
     </div>
 </div>
 
-<script>
+<!-- <script>
     var jumlahBarang = 1;
 
     function tambahJumlah() {
@@ -75,17 +76,14 @@
 
     function updateJumlah() {
         document.getElementById('jumlah-barang').value = jumlahBarang;
-
-        // Aktifkan atau nonaktifkan tombol kurang berdasarkan jumlah barang
         var tombolKurang = document.querySelector('.uk-icon-button[uk-icon="icon: minus"]');
         tombolKurang.disabled = (jumlahBarang === 1);
     }
 
     function checkout() {
-        // Logika untuk proses checkout
         alert('Proses checkout dilakukan.');
     }
-</script>
+</script> -->
 @endsection
 
 

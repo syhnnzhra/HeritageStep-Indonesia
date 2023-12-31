@@ -21,16 +21,16 @@
                             </div>
                             <div>
                                 <div class="uk-card-body">
-                                    <h3 class="uk-card-title">nama barang</h3>
-                                    <div class="uk-flex uk-flex-middle">
+                                    <h3 class="uk-card-title">name</h3>
+                                    <!-- <div class="uk-flex uk-flex-middle">
                                         <button class="uk-icon-button uk-margin-small-right" uk-icon="icon: plus" onclick="tambahJumlah()"></button>
                                         <form>
                                             <input class="uk-input uk-form-blank uk-form-width-xsmall" type="text" id="jumlah-barang" value="1" readonly>
                                         </form>
                                         <button class="uk-icon-button" uk-icon="icon: minus" onclick="kurangJumlah()" disabled></button>
-                                    </div>
+                                    </div> -->
                                     <p class="uk-margin-remove-top">Harga: </p>
-                                    <p class="uk-margin-remove-top">Rp xxx.xxx</p>
+                                    <p class="uk-margin-remove-top">Rp {{ number_format($cart->subtotal) }}</p>
                                 </div>
                             </div>
                         </div>
@@ -49,15 +49,15 @@
                             <p>Sub Total</p>
                             <p>Rp {{ number_format($subtotal) }}</p>
                         </div>
-                        <div class="uk-flex uk-flex-between uk-margin-top">
+                        <!-- <div class="uk-flex uk-flex-between uk-margin-top">
                             <p>Shipping Cost</p>
-                            <!-- <p>Rp xxx.xxx</p> -->
+                            <p>Rp xxx.xxx</p>
                             <div class="" id="shipping-cost-result"></div>
                         </div>
                         <div class="uk-flex uk-flex-between uk-margin-top">
                             <p>Total</p>
                             <p id="total">Rp xxx.xxx</p>
-                        </div>
+                        </div> -->
                 </div>
             </div>
             <div>
@@ -65,11 +65,12 @@
                     <div class="">
                         <h3 class="uk-card-title text-center">Checkout</h3>
                     </div>
-                    <form method="post" action="{{route('checkout.update', Auth::user()->id)}}" id="rajaongkirForm">
+                    <form method="post" action="{{route('checkout.update', Auth::user()->id)}}" >
                     @Method('PUT')
                         @csrf
                         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                         <input type="hidden" name="status" value="Sudah Dibayar">
+                        <input type="hidden" name="order_id" value="{{ $order_id }}">
                         <input type="hidden" id="inputan" name="subtotal" value="<?php echo $subtotal; ?>">
                         <input type="hidden" id="postalfee" name="postal_fee" value="">
                         <input type="hidden" value="9" name="province_from">
@@ -160,22 +161,5 @@
         }
     </script>
     
-    <script type="text/javascript">
-        document.getElementById('pay-button').onclick = function(){
-            snap.pay('{{ $params->snap_token }}', {
-            onSuccess: function(result){
-                /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
-            },
-            // Optional
-            onPending: function(result){
-                /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
-            },
-            // Optional
-            onError: function(result){
-                /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
-            }
-            });
-        };
-    </script>
 
 @endsection

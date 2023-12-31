@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Item;
+use App\Models\Order;
+use App\Models\OrderDetail;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -56,9 +59,41 @@ class HomeController extends Controller
         return view('user.item.cart');
     }
     public function order(){
-        return view('user.order.order');
+        return view('user.order.order',[
+            'order'=>Order::where('user_id', Auth::id())->where('status', 'ordered')->get()
+        ]);
     }
+
+    public function order_show($id){
+        return view('user.order.show', [
+            'order' => Order::where('id', $id)->first(),
+            'odetail' => OrderDetail::where('order_id', $id)->where('status', 'paid')->get()
+        ]);
+    }
+
     public function track(){
         return view('user.order.tracking');
+    }
+
+    public function search(Request $request)
+    {
+        $namaQuery = $request->input('nama');
+        $category = null;
+
+        if ($request->has('category')) {
+            $category = Category::firstWhere('id', $request->input('category'));
+        }
+
+        if ($request->has('item')) {
+            $items = Item::all();
+        } else {
+            $items = Item::when($request->input('category'), function ($query) use ($request) {
+                return $query->where('category_id', $request->input('category'));
+            })->when($namaQuery, function ($query) use ($namaQuery) {
+                return $query->where('nama', 'LIKE', '%' . $namaQuery . '%');
+            })->get();
+        }
+
+        return response()->json(['items' => $items, 'namaQuery' => $namaQuery, 'category' => $category]);
     }
 }

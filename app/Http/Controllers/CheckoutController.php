@@ -13,6 +13,7 @@ class CheckoutController extends Controller
 {
     public function index(){
         $order = Order::where('user_id', Auth::id())->where('status', 'pending')->first();
+        $odetail = Order::where('user_id', Auth::id())->where('status', 'pending')->first();
         $provinces = $this->getProvinces();
 
         if ($order) {
@@ -21,11 +22,6 @@ class CheckoutController extends Controller
             $orderedItems = collect();
         }
 
-        \Midtrans\Config::$serverKey = 'SB-Mid-server-aNMQxvtK9-21YXNCnMUKtshp';
-        \Midtrans\Config::$isProduction = false;
-        \Midtrans\Config::$isSanitized = true;
-        \Midtrans\Config::$is3ds = true;
-        
         $params = [
             'transaction_details' => [
                 'order_id' => rand(),
@@ -33,10 +29,7 @@ class CheckoutController extends Controller
             ]
         ];
     
-        $snapToken = \Midtrans\Snap::getSnapToken((array)$params);
-        $params->snap_token = $snapToken;
-
-        return view('user.checkout.checkout', compact('orderedItems', 'provinces', 'params'));
+        return view('user.checkout.checkout', compact('orderedItems', 'provinces', 'params','odetail'));
     }
 
     public function getProvinces()
@@ -110,24 +103,19 @@ class CheckoutController extends Controller
                     'bank' => 'null',
                     'status' => 'ordered',
                     'postal_fee' => 11000,
-                    'payment_status'=>"UNPAID",
+                    'payment_status'=>"Paid",
                     'subtotal' => $request->subtotal,
                     'no_resi' => '1111'
                     ]);
-                    $this->_generatePaymentToken($order);
-
-                        // Update status cart
                         foreach ($cart as $c) {
-                            $c->order_id = $order->order_id;
-                            $c->status = "Pending";
+                            $c->order_id = $order->id;
+                            $c->status = "Paid";
                             $c->save();
                         }
 
-                        
-
                     return redirect('/my-order');
             } else {
-                return abort('404');//kalo ternyata ga ada shopping cart, maka akan menampilkan error halaman tidak ditemukan
+                return abort('404');
         }
     }
 }

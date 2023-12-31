@@ -49,6 +49,8 @@
 </head>
 
 <body class="flex h-screen bg-gray-100">
+@include('sweetalert::alert')
+
   <div class="bg-green-800 text-white w-64 p-4 custom-warna ">
     <h2 class="text-2xl font-bold mb-4">HERITAGE_STEP</h2>
     <ul>

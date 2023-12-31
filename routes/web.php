@@ -103,7 +103,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', [HomeController::class, 'index']);
     // Route::get('/carts', [HomeController::class, 'cart']);
     Route::get('/my-order', [HomeController::class, 'order']);
+    Route::get('/my-order/{id}', [HomeController::class, 'order_show']);
+
     Route::get('/track', [HomeController::class, 'track']);
+
+    Route::get('/search', [HomeController::class, 'search'])->name('search');
 
     Route::resource('/detail-product', HomeController::class);
     Route::post('/order/item/{item_id}', [OrderController::class, 'orderItem'])->name('order.item');

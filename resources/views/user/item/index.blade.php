@@ -7,11 +7,12 @@
     <form>
         <fieldset class="uk-fieldset">
             <div class="uk-margin">
-                <input class="uk-input form" type="text" placeholder="Cari Produk Disini" aria-label="Input">
+                <input class="uk-input form" wire:model="search" name="nama" type="text" placeholder="Cari Produk Disini" aria-label="Input">
                 <button type="submit" class="uk-button custom-green-button uk-form-width-small">Cari</button>
             </div>
         </fieldset>
     </form>
+    
 
     <div class="uk-child-width-1-4@m uk-grid-small uk-grid-match" uk-grid>
         @forelse($items as $item)
@@ -41,11 +42,12 @@
                                         <h3 class="uk-card-title">{{ $item->nama }}</h3>
                                         <p>Harga :</p>
                                         <span>Rp {{ number_format($item->harga) }}</span>
-                                        <div class="tambah-barang uk-flex uk-flex-middle">
+                                        <!-- <div class="tambah-barang uk-flex uk-flex-middle">
                                             <button class="uk-icon-button uk-margin-small-right" uk-icon="icon: plus" onclick="tambahJumlah()"></button>
                                                 <input class="uk-input uk-form-blank uk-form-width-xsmall" type="text" id="jumlah-barang" name="qty" value="1" readonly>
                                             <button class="uk-icon-button" uk-icon="icon: minus" onclick="kurangJumlah()" disabled></button>
-                                        </div>
+                                        </div> -->
+                                        <br>
                                         <!-- <a href="{{url('/cart',$item->id)}}" class="uk-button custom-green-button">Beli</a> -->
                                         <button type="submit" class="uk-button custom-green-button">Beli</button>
                                     </form>
@@ -66,26 +68,26 @@
 
 
 <script>
-    var jumlahBarang = 1;
+    // var jumlahBarang = 1;
 
-    function tambahJumlah() {
-        jumlahBarang++;
-        updateJumlah();
-    }
+    // function tambahJumlah() {
+    //     jumlahBarang++;
+    //     updateJumlah();
+    // }
 
-    function kurangJumlah() {
-        if (jumlahBarang > 1) {
-            jumlahBarang--;
-            updateJumlah();
-        }
-    }
+    // function kurangJumlah() {
+    //     if (jumlahBarang > 1) {
+    //         jumlahBarang--;
+    //         updateJumlah();
+    //     }
+    // }
 
-    function updateJumlah() {
-        document.getElementById('jumlah-barang').value = jumlahBarang;
+    // function updateJumlah() {
+    //     document.getElementById('jumlah-barang').value = jumlahBarang;
 
-        var tombolKurang = document.querySelector('.uk-icon-button[uk-icon="icon: minus"]');
-        tombolKurang.disabled = (jumlahBarang === 1);
-    }
+    //     var tombolKurang = document.querySelector('.uk-icon-button[uk-icon="icon: minus"]');
+    //     tombolKurang.disabled = (jumlahBarang === 1);
+    // }
 
     function checkout() {
         alert('Proses checkout dilakukan.');

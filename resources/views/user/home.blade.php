@@ -54,41 +54,42 @@
     </form>
 
     <div class="uk-child-width-1-4@m uk-grid-small uk-grid-match" uk-grid>
-        @foreach($items as $item)
+        @forelse($items as $item)
         <div>
             <div class="uk-card uk-card-default badge-color uk-card uk-card-hover">
-            <div class="uk-card-badge uk-label"><p>{{ $item->category->nama }}</p></div>
+            <div class="uk-card-badge uk-label">
+                <p>{{ $item->category->nama }}</p>
+            </div>
                 <div class="uk-card-media-top">
                     <img src="{{ $item->foto }}" width="1800" height="1200" alt="">
                 </div>
                 <div class="uk-card-body">
                     <h3 class="uk-card-title">{{ $item->nama }}</h3>
-                    <h4 class="uk-card-title">Rp {{ number_format($item->harga) }}</h4>
                     <p>{{ $item->keterangan }}</p>
-                    <!-- <a href="/detail-product/{{ $item->id }}" class="uk-button custom-green-button">Buy Now!</a> -->
+                    <p>Rp {{ number_format($item->harga) }}</p>
                     @auth
-                        <button class="uk-button custom-green-button uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Buy</button>
-                        <div id="modal-example" uk-modal>
+                        <button class="uk-button custom-green-button uk-margin-small-right" type="button" uk-toggle="target: #modal-example-{{ $item->id }}" data-product-id="{{ $item->id }}">Buy</button>
+                        <div id="modal-example-{{ $item->id }}" uk-modal>
                             <div class="uk-modal-dialog uk-modal-body">
-                                <div>
-                                    <button class="uk-modal-close-default" type="button" uk-close></button>
-                                    <div class="uk-card-media-top">
-                                        <img src="https://source.unsplash.com/400x400/?product" width="800" height="600" alt="">
-                                    </div>
-                                    <div class="uk-card-body">
-                                        <h3 class="uk-card-title">Media Top</h3>
+                                <button class="uk-modal-close-default" type="button" uk-close></button>
+                                <div class="uk-card-media-top">
+                                    <img src="{{ $item->foto }}" width="800" height="600" alt="">
+                                </div>
+                                <div class="uk-card-body">
+                                    <form method="post" action="{{ route('order.item', ['item_id' => $item->id]) }}">
+                                    @csrf
+                                        <h3 class="uk-card-title">{{ $item->nama }}</h3>
                                         <p>Harga :</p>
-                                        <span>Rp xxx.xxx</span>
-                                        <br>
-                                        <div class="tambah-barang uk-flex uk-flex-middle">
+                                        <span>Rp {{ number_format($item->harga) }}</span>
+                                        <!-- <div class="tambah-barang uk-flex uk-flex-middle">
                                             <button class="uk-icon-button uk-margin-small-right" uk-icon="icon: plus" onclick="tambahJumlah()"></button>
-                                            <form>
-                                                <input class="uk-input uk-form-blank uk-form-width-xsmall" type="text" id="jumlah-barang" value="1" readonly>
-                                            </form>
+                                                <input class="uk-input uk-form-blank uk-form-width-xsmall" type="text" id="jumlah-barang" name="qty" value="1" readonly>
                                             <button class="uk-icon-button" uk-icon="icon: minus" onclick="kurangJumlah()" disabled></button>
-                                        </div>
-                                        <button class="uk-button custom-green-button">Beli</button>
-                                    </div>
+                                        </div> -->
+                                        <br>
+                                        <!-- <a href="{{url('/cart',$item->id)}}" class="uk-button custom-green-button">Beli</a> -->
+                                        <button type="submit" class="uk-button custom-green-button">Beli</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -98,7 +99,9 @@
                 </div>
             </div>
         </div>
-        @endforeach
+        @empty
+        <p>No products available</p>
+        @endforelse
     </div>
 </div>
 

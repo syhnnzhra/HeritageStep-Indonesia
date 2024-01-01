@@ -38,7 +38,9 @@
 </nav>
 
 <a href="/laporan" style="color:black;" class="my-5 mx-5 ">Cetak Laporan</a>
-
+    <div class="dashed-line"></div>
+    
+    
 <table class="uk-table uk-table-hover uk-table-divider my-5 mx-5 ">
     <caption style="color:black">Laporan Pengiriman</caption>
     <thead>
@@ -47,21 +49,21 @@
             <th style="color:black; background-color:#ffffff;"> ID Pesanan</th>
             <th style="color:black; background-color:#ffffff;"> Nomor Resi</th>
             <th style="color:black; background-color:#ffffff;"> Tanggal Pesanan</th>
-            <th style="color:black; background-color:#ffffff;"> Total Jumlah Barang</th>
+            <th style="color:black; background-color:#ffffff;"> Total Barang</th>
             <th style="color:black; background-color:#ffffff;"> Status Pembayaran</th>
-            <th style="color:black; background-color:#ffffff;"> Status Pengiriman</th>
+            <th style="color:black; background-color:#ffffff; "> Status Pengiriman</th>
         </tr>
     </thead>
     <tbody style="color:black">
     @foreach($order as $o)
         <tr>
-            <td>{{ $o->first_name }} {{ $o->last_name }}</td>
-            <td>{{ $o->id }}</td>
-            <td>{{ $o->no_resi }}</td>
-            <td>{{ $o->updated_at }}</td>
-            <td>Rp {{ number_format($o->subtotal) }}</td>
-            <td>{{ $o->payment_status }}</td>
-            <td>{{ $o->status }}</td>
+            <td style="text-align: center;" >{{ $o->first_name }} {{ $o->last_name }}</td>
+            <td style="text-align: center;" >{{ $o->id }}</td>
+            <td style="text-align: center;" >{{ $o->no_resi }}</td>
+            <td style="text-align: center;" >{{ $o->updated_at }}</td>
+            <td style="text-align: center;" >Rp {{ number_format($o->subtotal) }}</td>
+            <td style="text-align: center;" >{{ $o->payment_status }}</td>
+            <td style="text-align: center;">{{ $o->status }}</td>
         </tr>
     @endforeach
     </tbody>

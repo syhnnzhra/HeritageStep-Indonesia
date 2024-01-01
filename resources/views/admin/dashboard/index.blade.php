@@ -38,8 +38,8 @@
     </div>
 
     <div>
-    <div class="uk-overflow-auto">
-    <table class="uk-table uk-table-hover uk-table-middle uk-table-divider my-5 mx-5">
+    <div class="uk-overflow-auto mr-2 my-5">
+    <table class="uk-table uk-table-hover my-5 mx-5">
         
         <thead>
             <tr>
@@ -55,7 +55,7 @@
             @foreach ($odetail as $product)
             <tr>
                 <!-- <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td> -->
-                <td><div class="image-wrapper"><img class="image" src="{{ $product->item->foto }}" width="80" height="80"/></div></td>
+                <td><div class="image-wrapper "><img class="image" src="{{ $product->item->foto }}" width="80" height="80"/></div></td>
                 <td class="uk-table-link">
                     <a class="uk-link-reset" href="">{{ $product->item->nama }}</a>
                 </td>

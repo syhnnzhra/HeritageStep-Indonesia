@@ -19,6 +19,7 @@
                 <th style="color:black; background-color:#39A7FF;"> Status Pengiriman</th>
             </tr>
         </thead>
+        
         <tbody>
             @foreach ($order as $o)
             <tr>

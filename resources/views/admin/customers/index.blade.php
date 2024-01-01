@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @section('container')
-<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m ">
+<div class="uk-card uk-card-default  uk-width-1-1@m my-5 mx-5">
     <h3 class="uk-card-title">Daftar Pengguna</h3>
 </div>
 <!-- <nav class="uk-navbar-container mx-5 " uk-navbar >
@@ -44,13 +44,13 @@
 </div> -->
 <!-- tabel 2 -->
 
-<nav class="uk-navbar-container mx-5 " uk-navbar >
+<nav class="uk-navbar " uk-navbar >
 
 
-        <div class="uk-navbar-item ">
+        <div class="uk-navbar-item mx-5">
             <form class="uk-search uk-search-navbar">
                 <span uk-search-icon></span>
-                <input class="uk-search-input" type="search" placeholder="Search" aria-label="Search">
+                <input class="uk-search-input" type="Cari" placeholder="Cari" aria-label="Cari">
             </form>
         </div>
 </nav>

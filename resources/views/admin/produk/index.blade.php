@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @section('container')
-    <div class="uk-card uk-card-default uk-card-body uk-width-1-1@m produk">
+    <div class="uk-card uk-card-default uk-width-1-1@m my-5 mx-5">
         <h3 class="uk-card-title">Produk</h3>
     </div>
     <!-- icon -->
@@ -14,15 +14,15 @@
             <input class="uk-search-input" type="search" placeholder="Search" aria-label="Search">
         </form>
     </div> -->
-    <div class="uk-overflow-auto mr-2">
-        <a href="/produk/create"> Tambah Data</a>
+    <div class="uk-overflow-auto mr-2 my-5">
+        <a href="/produk/create" class="my-10 mx-5"> Tambah Data</a>
         <table class="uk-table uk-table-hover uk-table-middle uk-table-divider my-0 mx-5">
             <thead>
                 <tr>
                     <!-- <th class="uk-table-shrink"></th> -->
                     <th class="uk-table-shrink" style="color:black;">Produk</th>
                     <th class="uk-width-small" style="color:black;">Nama Produk</th>
-                    <th class="uk-table-expand" style="color:black;">Deskripsi</th>
+                    <th class="uk-width-small" style="color:black;">Deskripsi</th>
                     <th class="uk-table-shrink uk-text-nowrap" style="color:black;">Id Produk</th>
                     <th class="uk-table-shrink uk-text-nowrap"style="color:black;">Harga</th>
                     <th class="uk-table-shrink uk-text-nowrap"style="color:black;">Stock</th>
@@ -38,7 +38,7 @@
                         <a class="uk-link-reset" href="">{{ $produk->nama }}</a>
                     </td>
                     <td class="uk-text-truncate">{{ $produk->keterangan }}</td>
-                    <td class="uk-text-nowrap">{{ $produk->id }}</td>
+                    <td class="uk-text-nowrap ">{{ $produk->id }}</td>
                     <td class="uk-text-nowrap">Rp {{ number_format($produk->harga) }}</td>
                     <td class="uk-text-nowrap">{{ $produk->stock }}</td>
                     <td class="uk-text-nowrap">

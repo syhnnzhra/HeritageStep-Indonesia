@@ -15,7 +15,7 @@
         </form>
     </div> -->
     <div class="uk-overflow-auto mr-2 my-5">
-        <a href="/produk/create" class="my-10 mx-5"> Tambah Data</a>
+    <a href="/produk/create" class="my-10 mx-5" style="font-size:15px;"> Tambah Data</a>
         <table class="uk-table uk-table-hover uk-table-middle uk-table-divider my-0 mx-5">
             <thead>
                 <tr>

@@ -70,25 +70,25 @@
 <body class="flex h-screen bg-gray-100 sidebar">
 @include('sweetalert::alert')
 
-  <div class="bg-green-800 text-white w-64 p-4 custom-warna cardd " style="text-align: center;">
+  <div class="bg-green-800 text-white w-64 p-10 custom-warna cardd " style="text-align: center;">
     <h2 class="text-2xl font-bold mb-4">HERITAGE_STEP</h2>
     <ul class="card">
-      <li class="uk-card uk-card-hover uk-card-body mb-2 mx-5" style="background:#C3E2C2; text-align: center;">
+      <li class="uk-card uk-card-hover uk-card-body mb-2 mr-4 rounded-xl " style="background:#C3E2C2; text-align: center;">
         <a href="/dashboard"  class="text-1xl font-bold mt-2">dashboard</a>
       </li>
-      <li class="uk-card uk-card-hover uk-card-body mb-2 mx-5 my-2" style="background:#C3E2C2; text-align: center;">
+      <li class="uk-card uk-card-hover uk-card-body mb-2 mr-4 rounded-xl " style="background:#C3E2C2; text-align: center;">
         <a href="/order"  class="text-0xl font-bold mb-2">Mengelola Pesanan</a>
       </li>
-      <li class="uk-card uk-card-hover uk-card-body mb-2 mx-5" style="background:#C3E2C2; text-align: center;">
+      <li class="uk-card uk-card-hover uk-card-body mb-2 mr-4 rounded-xl " style="background:#C3E2C2; text-align: center;">
         <a href="/produk"  class="text-1xl font-bold mb-2">Mengelola Produk</a>
       </li>
-      <li class="uk-card uk-card-hover uk-card-body mb-2 mx-5" style="background:#C3E2C2; text-align: center;">
+      <li class="uk-card uk-card-hover uk-card-body mb-2 mr-4 rounded-xl " style="background:#C3E2C2; text-align: center;">
         <a href="/customer" class="font-bold mb-2">Daftar Pengguna</a>
       </li>
-      <li class="uk-card uk-card-hover uk-card-body mb-2 mx-5" style="background:#C3E2C2; text-align: center;">
-        <form action="/logout" method="post"  class="text-1xl font-bold mb-4">
+      <li class="uk-card uk-card-hover uk-card-body mb-2 mr-4 rounded-xl " style="background:#C3E2C2; text-align: center;">
+        <form action="/logout" method="post"  class="text-1xl mb-4">
             @csrf
-            <button type="submit">Logout</button>
+            <button type="submit"><strong>Logout</strong></button>
         </form>
       </li>
     </ul>

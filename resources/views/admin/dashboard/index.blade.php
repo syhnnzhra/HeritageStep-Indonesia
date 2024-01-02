@@ -1,7 +1,7 @@
 @extends('admin.layouts.main')
 @section('container')
 
-<div class="uk-card uk-card-default uk-width-1-1@m my-5 mx-5">
+<div class="uk-card uk-card-default my-5 mx-5">
     <h3 class="uk-card-title">Dashboard</h3>
 </div>
 <nav class="uk-navbar my-1 mx-5 " uk-navbar >

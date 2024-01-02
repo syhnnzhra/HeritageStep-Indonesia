@@ -55,7 +55,7 @@
             @foreach ($odetail as $product)
             <tr>
                 <!-- <td><input class="uk-checkbox" type="checkbox" aria-label="Checkbox"></td> -->
-                <td><div class="image-wrapper "><img class="image" src="{{ $product->item->foto }}" width="80" height="80"/></div></td>
+                <td><div class="image-wrapper "><img class="image" src="{{ asset('img/items/' . $product->item->foto) }}" width="80" height="80"/></div></td>
                 <td class="uk-table-link">
                     <a class="uk-link-reset" href="">{{ $product->item->nama }}</a>
                 </td>

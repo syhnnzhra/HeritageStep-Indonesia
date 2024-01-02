@@ -17,7 +17,7 @@
         <div>
             <div class="uk-card uk-card-default">
                 <div class="uk-card-media-top">
-                    <img src="{{ $od->item->nama }}" width="1800" height="1200" alt="">
+                    <img src="{{ asset('img/items/' . $od->item->nama) }}" width="1800" height="1200" alt="">
                 </div>
                 <div class="uk-card-body">
                     <h3 class="uk-card-title">{{ $od->item->nama }}</h3>

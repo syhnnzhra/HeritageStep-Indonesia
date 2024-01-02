@@ -30,13 +30,13 @@ class ItemsSeeder extends Seeder
         // }
 
         $items = [
-            ['nama' => 'Sepatu Casual 1', 'category_id' => 1, 'stok' => 50, 'harga' => 150000, 'keterangan' => 'Deskripsi Sepatu Casual 1', 'foto' => 'foto3.jpeg'],
-            ['nama' => 'Sepatu Casual 2', 'category_id' => 1, 'stok' => 40, 'harga' => 120000, 'keterangan' => 'Deskripsi Sepatu Casual 2', 'foto' => 'foto4.jpeg'],
+            ['nama' => 'Sepatu Casual 1', 'category_id' => 1, 'stok' => 50, 'harga' => 150000, 'keterangan' => 'Deskripsi Sepatu Casual 1', 'foto' => 'foto3.jpg'],
+            ['nama' => 'Sepatu Casual 2', 'category_id' => 1, 'stok' => 40, 'harga' => 120000, 'keterangan' => 'Deskripsi Sepatu Casual 2', 'foto' => 'foto4.jpg'],
 
-            ['nama' => 'Sepatu Formal 1', 'category_id' => 2, 'stok' => 30, 'harga' => 200000, 'keterangan' => 'Deskripsi Sepatu Formal 1', 'foto' => 'foto1.jpeg'],
-            ['nama' => 'Sepatu Formal 2', 'category_id' => 2, 'stok' => 25, 'harga' => 180000, 'keterangan' => 'Deskripsi Sepatu Formal 2', 'foto' => 'foto2.jpeg'],
+            ['nama' => 'Sepatu Formal 1', 'category_id' => 2, 'stok' => 30, 'harga' => 200000, 'keterangan' => 'Deskripsi Sepatu Formal 1', 'foto' => 'foto1.jpg'],
+            ['nama' => 'Sepatu Formal 2', 'category_id' => 2, 'stok' => 25, 'harga' => 180000, 'keterangan' => 'Deskripsi Sepatu Formal 2', 'foto' => 'foto2.jpg'],
 
-            ['nama' => 'Sneakers 1', 'category_id' => 3, 'stok' => 35, 'harga' => 130000, 'keterangan' => 'Deskripsi Sneakers 1', 'foto' => 'foto5.jpeg'],
+            ['nama' => 'Sneakers 1', 'category_id' => 3, 'stok' => 35, 'harga' => 130000, 'keterangan' => 'Deskripsi Sneakers 1', 'foto' => 'foto5.jpg'],
             ['nama' => 'Sneakers 2', 'category_id' => 3, 'stok' => 30, 'harga' => 160000, 'keterangan' => 'Deskripsi Sneakers 2', 'foto' => 'foto6.jpeg'],
 
         ];

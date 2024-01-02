@@ -45,7 +45,7 @@ class ItemController extends Controller
         $foto =$request->foto;
         $imageName = time().'.'.
         $foto->extension();
-        $request->foto->move(public_path().'/img', $imageName);
+        $request->foto->move(public_path().'/img/items', $imageName);
         $item->foto = $imageName;
         $item->save();
 
@@ -79,9 +79,9 @@ class ItemController extends Controller
         $foto =$request->foto;
         if($foto != NULL){
             $item=Item::FindOrFail($id);
-            File::delete('gambar/'.$item->image);
+            File::delete('img/items'.$item->image);
             $imageName = time().'.'.$foto->extension();
-            $request->foto->move(public_path('gambar/'), $imageName);
+            $request->foto->move(public_path('img/items'), $imageName);
             $item->nama=$request->nama;
             $item->category_id=$request->category_id;
             $item->stok=$request->stok;

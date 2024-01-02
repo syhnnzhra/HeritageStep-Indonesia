@@ -19,12 +19,21 @@
                 <th style="color:black; background-color:#39A7FF;"> Status Pengiriman</th>
             </tr>
         </thead>
+        <div class="content">
+        <div class="card card-info card-outline ">
+            <div class="card-header">
+                <div class="card-tools">
+                    <a href="/pesanan" class="btn btn-success"></a>
+                </div>
+            </div>
+        </div>
+    </div>
         <tbody>
             @foreach ($order as $o)
             <tr>
                 <th>{{ $o->first_name }} {{ $o->last_name }}</th> 
                 <th>{{ $o->id }}</th> 
-                <th>{{ $o->no_resi }}</th> 
+                <th>{{$o->no_resi }}</th> 
                 <th>{{ $o->updated_at }}</th> 
                 <th>Rp {{ number_format($o->subtotal) }}</th> 
                 <th>{{ $o->payment_status }}</th> 

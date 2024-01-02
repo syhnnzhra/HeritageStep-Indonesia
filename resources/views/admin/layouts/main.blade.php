@@ -64,20 +64,20 @@
   <div class="bg-green-800 text-white w-64 p-4 custom-warna ">
     <h2 class="text-2xl font-bold mb-4">HERITAGE_STEP</h2>
     <ul>
-      <li class="mb-2 a" >
+      <li class="uk-card uk-card-hover uk-card-body mb-2" style="background:#C3E2C2;">
       <i class="https://www.flaticon.com/free-icon/dashboard_1828791?term=dashboard&page=1&position=3&origin=search&related_id=1828791"></i>
         <a href="/dashboard"  class="text-1xl font-bold mt-2"  >dashboard</a>
       </li>
-      <li class="mb-2 b">
-        <a href="/order"  class="text-1xl font-bold mb-2 ">Mengelola Pesanan</a>
+      <li class="uk-card uk-card-hover uk-card-body mb-2" style="background:#C3E2C2;">
+        <a href="/order"  class="text-0xl font-bold mb-2 ">Mengelola Pesanan</a>
       </li>
-      <li class="mb-2 c">
+      <li class="uk-card uk-card-hover uk-card-body mb-2 " style="background:#C3E2C2;">
         <a href="/produk"  class="text-1xl font-bold mb-2 ">Mengelola Produk</a>
       </li>
-      <li class="mb-2 d">
+      <li class="uk-card uk-card-hover uk-card-body mb-2" style="background:#C3E2C2;">
         <a href="/customer" class="text-1xl font-bold mb-2">Daftar Pengguna</a>
       </li>
-      <li class="mb-2 e">
+      <li class="uk-card uk-card-hover uk-card-body mb-2" style="background:#C3E2C2;">
         <form action="/logout" method="post"  class="text-1xl font-bold mb-4">
             @csrf
             <button type="submit">Logout</button>
